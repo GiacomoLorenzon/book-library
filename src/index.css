@@ -1,68 +1,279 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* =========================
+   Global reset (minimal)
+========================= */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+html,
+body {
+  max-width: 700px;
+  margin: 3em auto;
+  padding: 0;
+  background-color: #f4f4f4;
+  padding: 1em;
+  border-radius: 30px;
 }
-a:hover {
-  color: #535bf2;
-}
+
+/* =========================
+   Typography
+========================= */
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "Baskerville", "Libre Baskerville", "Georgia", "Times New Roman",
+    serif;
+  font-size: 16px;
+  line-height: 1.6;
+
+  color: #000;
+  background-color: #fff;
 }
+
+/* =========================
+   Layout
+========================= */
+
+#root {
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* =========================
+   Headings
+========================= */
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0em;
+  margin-top: 0em;
 }
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 0em;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Text elements
+========================= */
+
+p {
+  margin: 0.5rem 0 1rem 0;
+}
+
+em {
+  font-style: italic;
+}
+
+/* =========================
+   Forms
+========================= */
+
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  margin: 0.25em 0em;
+  border-radius: 30px;
+}
+
+input,
+select {
+  padding: 0.35rem 0.45rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #000;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='black' stroke-width='1.2'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 10px 6px;
+}
+
+/* =========================
+   Buttons
+========================= */
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #000;
+  background: #181818;
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  background: #444;
 }
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.Buttons {
+  display: grid;
+  align-items: center;
+}
+
+/* =========================
+   Sections & separators
+========================= */
+
+section {
+  margin-bottom: 2rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #000;
+  margin: 2rem 0;
+}
+
+/* =========================
+   Book list
+========================= */
+.book-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.5em 0;
+}
+
+.book-cover {
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.book-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.book-cover-fallback {
+  display: block;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.book-meta {
+  flex: 1;
+}
+
+.book-meta-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+.edit-button {
+  margin-left: auto;
+  border: none;
+  background: none;
+  padding: 0.2rem 0.3rem;
+
+  cursor: pointer;
+}
+
+/* override esplicito di QUALSIASI hover globale */
+.edit-button:hover,
+.edit-button:focus,
+.edit-button:active {
+  background: none;
+  color: inherit;
+}
+
+/* icona */
+.edit-icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+
+  opacity: 0.85;
+  transition: opacity 120ms ease-in-out;
+}
+
+.edit-button:hover .edit-icon {
+  opacity: 0.45;
+}
+
+
+/* =========================
+   Utility
+========================= */
+
+.small {
+  font-size: 0.9rem;
+  color: #444444;
+}
+
+
+/* =========================
+   Transitions
+========================= */
+
+
+.book {
+  transition: background-color 150ms ease;
+}
+
+.book-row {
+  transition: gap 150ms ease;
+}
+
+.book-meta,
+.book-meta-edit {
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.book.is-editing .book-meta {
+  opacity: 0.95;
+  transform: translateY(2px);
+}
+
+.book-meta-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+

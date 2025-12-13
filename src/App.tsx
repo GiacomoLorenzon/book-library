@@ -190,96 +190,281 @@ export default function App() {
   ========================= */
 
   return (
-    <div style={{ maxWidth: 900, margin: "40px auto", fontFamily: "system-ui" }}>
-      <h1>Personal Library</h1>
+    <div>
+      <h1>Libreria</h1>
+      <h2>di Giacomo Lorenzon</h2>
 
       {/* ---------- Token ---------- */}
       <section>
+        Password: 
         <input
+          style={{marginLeft: "1em"}}
           type="password"
           placeholder="GitHub token"
           value={token}
           onChange={(e) => setToken(e.target.value)}
-          style={{ width: "100%" }}
         />
       </section>
 
       {/* ---------- Add book ---------- */}
-      <section style={{ marginTop: 20 }}>
+      <section>
         <h3>Aggiungi libro</h3>
-        <input placeholder="ISBN" value={isbn} onChange={(e) => setIsbn(e.target.value)} />
-        <button onClick={autofillFromISBN}>Autocompleta</button>
 
-        <div style={{ display: "grid", gap: 6, marginTop: 10 }}>
-          <input placeholder="Titolo" value={title} onChange={(e) => setTitle(e.target.value)} />
-          <input placeholder="Autori" value={authors} onChange={(e) => setAuthors(e.target.value)} />
-          <input placeholder="Editore" value={publisher} onChange={(e) => setPublisher(e.target.value)} />
-          <input placeholder="Anno" value={year} onChange={(e) => setYear(e.target.value)} />
-          <input placeholder="Lingua" value={language} onChange={(e) => setLanguage(e.target.value)} />
-          <input placeholder="Categoria" value={category} onChange={(e) => setCategory(e.target.value)} />
-          <input placeholder="Copertina URL" value={coverUrl} onChange={(e) => setCoverUrl(e.target.value)} />
+        <input
+          placeholder="ISBN"
+          value={isbn}
+          onChange={(e) => setIsbn(e.target.value)}
+        />
+        <button
+          style={{marginLeft: "1em"}}
+          onClick={autofillFromISBN}>
+            Autocompleta
+        </button>
 
-          <select value={status} onChange={(e) => setStatus(e.target.value as ReadingStatus)}>
-            <option value="letto">Letto</option>
+        <div className="Buttons">
+          <input
+            placeholder="Titolo"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            placeholder="Autori (separati da virgola)"
+            value={authors}
+            onChange={(e) => setAuthors(e.target.value)}
+          />
+          <input
+            placeholder="Editore"
+            value={publisher}
+            onChange={(e) => setPublisher(e.target.value)}
+          />
+          <input
+            placeholder="Anno"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          />
+          <input
+            placeholder="Lingua"
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+          />
+          <input
+            placeholder="Categoria"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          />
+          <input
+            placeholder="Copertina URL"
+            value={coverUrl}
+            onChange={(e) => setCoverUrl(e.target.value)}
+          />
+
+          <select
+            value={status}
+            onChange={(e) =>
+              setStatus(e.target.value as ReadingStatus)
+            }
+          >
+            <option value="Letto">Letto</option>
             <option value="Non letto">Non letto</option>
-            <option value="in lettura">In lettura</option>
-            <option value="da acquistare">Da acquistare</option>
+            <option value="In lettura">In lettura</option>
+            <option value="Da acquistare">Da acquistare</option>
           </select>
         </div>
 
-        <button onClick={addBook} style={{ marginTop: 10 }}>
-          Aggiungi
-        </button>
+        <button onClick={addBook}>Aggiungi</button>
+        <p className="small">{message}</p>
       </section>
 
       {/* ---------- Commit ---------- */}
-      <section style={{ marginTop: 20 }}>
-        <button disabled={!dirty} onClick={commitChanges}>
-          Commit changes
+      <section>
+        <button
+          style={{marginRight: "1em"}}
+          disabled={!dirty} onClick={commitChanges}>
+          Salva modifiche
         </button>
-        {dirty && <span> ● modifiche non salvate</span>}
-        <p>{message}</p>
+        {dirty && <span className="small"> ● modifiche non salvate.</span>}
       </section>
 
+      <hr />
+
       {/* ---------- Library ---------- */}
-      <section style={{ marginTop: 30 }}>
-        <h2>Libreria</h2>
+      <section>
+        <h2>Consulta</h2>
 
         {sortedBooks.map((b) => {
           const id = b.isbn ?? b.addedAt
           const isEditing = editingId === id
 
           return (
-            <div key={id} style={{ border: "1px solid #ddd", padding: 12, marginBottom: 8 }}>
+            <div
+              key={id}
+              className={`book ${isEditing ? "is-editing" : ""}`}
+            >
               {!isEditing ? (
-                <>
-                  <strong>{b.title}</strong> — {b.authors.join(", ")}  
-                  <div>{b.publisher} · {b.year} · {b.language}</div>
-                  <div>{b.category} · <em>{b.status}</em></div>
-                  <button onClick={() => startEdit(b)}>Modifica</button>
-                </>
-              ) : (
-                <>
-                  <input value={editDraft!.title} onChange={(e) => setEditDraft({ ...editDraft!, title: e.target.value })} />
-                  <input value={editDraft!.authors.join(", ")} onChange={(e) => setEditDraft({ ...editDraft!, authors: parseAuthors(e.target.value) })} />
-                  <input value={editDraft!.publisher ?? ""} onChange={(e) => setEditDraft({ ...editDraft!, publisher: e.target.value })} />
-                  <input value={editDraft!.year ?? ""} onChange={(e) => setEditDraft({ ...editDraft!, year: parseInt(e.target.value, 10) })} />
-                  <input value={editDraft!.language ?? ""} onChange={(e) => setEditDraft({ ...editDraft!, language: e.target.value })} />
-                  <input value={editDraft!.category ?? ""} onChange={(e) => setEditDraft({ ...editDraft!, category: e.target.value })} />
+                /* =========================
+                  VIEW MODE
+                ========================= */
+                <div className="book-row">
+                  <div className="book-cover">
+                    {b.coverUrl ? (
+                      <img
+                        src={b.coverUrl}
+                        alt={`Copertina di ${b.title}`}
+                      />
+                    ) : (
+                      <span className="book-cover-fallback"></span>
+                    )}
+                  </div>
 
-                  <select
-                    value={editDraft!.status}
-                    onChange={(e) => setEditDraft({ ...editDraft!, status: e.target.value as ReadingStatus })}
+                  <div className="book-meta">
+                    <div className="book-title">
+                      <strong>{b.title}</strong>
+                    </div>
+                    <div className="details">
+                      {/* Line 1: AUTORE – publisher, year */}
+                      <div>
+                        <span style={{textTransform: "uppercase"}}>{b.authors.join(", ")}</span>
+                        {(b.publisher || b.year) && " – "}
+                        {b.publisher}
+                        {b.publisher && b.year && ", "}
+                        {b.year}
+                      </div>
+
+                      {/* Line 2: categoria, lingua · stato */}
+                      <div className="small">
+                        {b.category}
+                        {b.category && b.language && ", "}
+                        {b.language}
+                        {(b.category || b.language) && " · "}
+                        <em>{b.status}</em>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    className="edit-button"
+                    onClick={() => startEdit(b)}
+                    aria-label="Modifica libro"
+                    title="Modifica"
                   >
-                    <option value="letto">Letto</option>
-                    <option value="Non letto">Non letto</option>
-                    <option value="in lettura">In lettura</option>
-                    <option value="da acquistare">Da acquistare</option>
-                  </select>
+                    <img
+                      src="https://www.svgrepo.com/show/146083/pencil-edit-button.svg"
+                      alt=""
+                      className="edit-icon"
+                    />
+                  </button>
+                </div>
+              ) : (
+                /* =========================
+                  EDIT MODE
+                ========================= */
+                <div className="book-row">
+                  <div className="book-cover">
+                    {editDraft!.coverUrl ? (
+                      <img
+                        src={editDraft!.coverUrl}
+                        alt={`Copertina di ${editDraft!.title}`}
+                      />
+                    ) : (
+                      <span className="book-cover-fallback"></span>
+                    )}
+                  </div>
 
-                  <button onClick={saveEdit}>Salva</button>
-                  <button onClick={cancelEdit}>Annulla</button>
-                </>
+                  <div className="book-meta book-meta-edit">
+                    <input
+                      type="text"
+                      value={editDraft!.title}
+                      placeholder="Titolo"
+                      onChange={(e) =>
+                        setEditDraft({ ...editDraft!, title: e.target.value })
+                      }
+                    />
+
+                    <input
+                      type="text"
+                      value={editDraft!.authors.join(", ")}
+                      placeholder="Autori (separati da virgola)"
+                      onChange={(e) =>
+                        setEditDraft({
+                          ...editDraft!,
+                          authors: parseAuthors(e.target.value),
+                        })
+                      }
+                    />
+
+                    <input
+                      type="text"
+                      value={editDraft!.publisher ?? ""}
+                      placeholder="Editore"
+                      onChange={(e) =>
+                        setEditDraft({
+                          ...editDraft!,
+                          publisher: e.target.value || undefined,
+                        })
+                      }
+                    />
+
+                    <input
+                      type="text"
+                      value={editDraft!.year ?? ""}
+                      placeholder="Anno"
+                      onChange={(e) =>
+                        setEditDraft({
+                          ...editDraft!,
+                          year: e.target.value
+                            ? parseInt(e.target.value, 10)
+                            : undefined,
+                        })
+                      }
+                    />
+
+                    <input
+                      type="text"
+                      value={editDraft!.category ?? ""}
+                      placeholder="Categoria"
+                      onChange={(e) =>
+                        setEditDraft({
+                          ...editDraft!,
+                          category: e.target.value || undefined,
+                        })
+                      }
+                    />
+
+                    <input
+                      type="text"
+                      value={editDraft!.language ?? ""}
+                      placeholder="Lingua"
+                      onChange={(e) =>
+                        setEditDraft({
+                          ...editDraft!,
+                          language: e.target.value || undefined,
+                        })
+                      }
+                    />
+
+                    <select
+                      value={editDraft!.status}
+                      onChange={(e) =>
+                        setEditDraft({
+                          ...editDraft!,
+                          status: e.target.value as ReadingStatus,
+                        })
+                      }
+                    >
+                      <option value="Letto">Letto</option>
+                      <option value="Non letto">Non letto</option>
+                      <option value="In lettura">In lettura</option>
+                      <option value="Da acquistare">Da acquistare</option>
+                    </select>
+
+                    <div>
+                      <button
+                        style={{marginRight: "0.5em"}}
+                        onClick={saveEdit}>Salva</button>
+                      <button onClick={cancelEdit}>Annulla</button>
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
           )
