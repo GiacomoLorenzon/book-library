@@ -5,18 +5,23 @@ import { fetchBookFromISBN } from "./services/isbn"
 import { getBooksFile, putBooksFile } from "./services/github"
 
 /* =========================
-   Utility
+   Utilities
 ========================= */
 
 function nowISO(): string {
   return new Date().toISOString()
 }
 
-function normaliseAuthors(s: string): string[] {
+function parseAuthors(s: string): string[] {
   return s
     .split(",")
     .map((x) => x.trim())
-    .filter((x) => x.length > 0)
+    .filter(Boolean)
+}
+
+function sameBook(a: Book, b: Book): boolean {
+  if (a.isbn && b.isbn) return a.isbn === b.isbn
+  return a.addedAt === b.addedAt
 }
 
 /* =========================
@@ -24,44 +29,47 @@ function normaliseAuthors(s: string): string[] {
 ========================= */
 
 export default function App() {
-  /* ---------- Persistent data ---------- */
+  /* ---------- Working copy ---------- */
 
-  const [books, setBooks] = useState<Book[]>(booksSeed as Book[])
+  const [workingBooks, setWorkingBooks] = useState<Book[]>(
+    booksSeed as Book[]
+  )
+  const [dirty, setDirty] = useState(false)
 
   /* ---------- GitHub ---------- */
 
-  const [token, setToken] = useState<string>("")
+  const [token, setToken] = useState("")
+  const [message, setMessage] = useState("")
 
-  /* ---------- Staging ---------- */
+  /* ---------- Editing state ---------- */
 
-  const [staging, setStaging] = useState<Book[]>([])
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editDraft, setEditDraft] = useState<Book | null>(null)
 
-  /* ---------- Form fields ---------- */
+  /* ---------- Add-book form ---------- */
 
-  const [isbn, setIsbn] = useState<string>("")
-  const [title, setTitle] = useState<string>("")
-  const [authors, setAuthors] = useState<string>("")
-  const [publisher, setPublisher] = useState<string>("")
-  const [year, setYear] = useState<string>("")
-  const [language, setLanguage] = useState<string>("")
-  const [category, setCategory] = useState<string>("")
-  const [coverUrl, setCoverUrl] = useState<string>("")
-  const [status, setStatus] = useState<ReadingStatus>("Non letto")
-
-  const [message, setMessage] = useState<string>("")
+  const [isbn, setIsbn] = useState("")
+  const [title, setTitle] = useState("")
+  const [authors, setAuthors] = useState("")
+  const [publisher, setPublisher] = useState("")
+  const [year, setYear] = useState("")
+  const [language, setLanguage] = useState("")
+  const [category, setCategory] = useState("")
+  const [coverUrl, setCoverUrl] = useState("")
+  const [status, setStatus] = useState<ReadingStatus>("non letto")
 
   /* =========================
      Derived
   ========================= */
 
   const sortedBooks = useMemo(() => {
-    return [...books].sort((a, b) => {
+    return [...workingBooks].sort((a, b) => {
       const ya = a.year ?? -1
       const yb = b.year ?? -1
       if (ya !== yb) return yb - ya
       return a.title.localeCompare(b.title)
     })
-  }, [books])
+  }, [workingBooks])
 
   /* =========================
      ISBN autofill
@@ -84,18 +92,19 @@ export default function App() {
       setYear(b.year ? String(b.year) : "")
       setLanguage(b.language ?? "")
       setCoverUrl(b.coverUrl ?? "")
+      setStatus(b.status)
 
-      setMessage("Metadati caricati. Verifica e aggiungi.")
+      setMessage("Metadati caricati.")
     } catch (err: any) {
-      setMessage(err?.message ?? "Errore durante il recupero ISBN.")
+      setMessage(err?.message ?? "Errore ISBN.")
     }
   }
 
   /* =========================
-     Add to staging
+     Add new book
   ========================= */
 
-  function addToStaging() {
+  function addBook() {
     if (!title.trim()) {
       setMessage("Il titolo è obbligatorio.")
       return
@@ -104,7 +113,7 @@ export default function App() {
     const book: Book = {
       isbn: isbn.trim() || undefined,
       title: title.trim(),
-      authors: normaliseAuthors(authors),
+      authors: parseAuthors(authors),
       publisher: publisher.trim() || undefined,
       year: year ? parseInt(year, 10) : undefined,
       language: language.trim() || undefined,
@@ -114,9 +123,9 @@ export default function App() {
       addedAt: nowISO(),
     }
 
-    setStaging((prev) => [...prev, book])
+    setWorkingBooks((prev) => [...prev, book])
+    setDirty(true)
 
-    /* reset form (ma NON il token) */
     setIsbn("")
     setTitle("")
     setAuthors("")
@@ -125,23 +134,42 @@ export default function App() {
     setLanguage("")
     setCategory("")
     setCoverUrl("")
-    setStatus("Non letto")
+    setStatus("non letto")
 
-    setMessage("Libro aggiunto alla lista temporanea.")
+    setMessage("Libro aggiunto (non ancora salvato).")
   }
 
   /* =========================
-     Commit all
+     Editing logic
   ========================= */
 
-  async function commitAll() {
+  function startEdit(book: Book) {
+    setEditingId(book.isbn ?? book.addedAt)
+    setEditDraft({ ...book })
+  }
+
+  function cancelEdit() {
+    setEditingId(null)
+    setEditDraft(null)
+  }
+
+  function saveEdit() {
+    if (!editDraft) return
+
+    setWorkingBooks((prev) =>
+      prev.map((b) => (sameBook(b, editDraft) ? editDraft : b))
+    )
+    setDirty(true)
+    cancelEdit()
+  }
+
+  /* =========================
+     Commit
+  ========================= */
+
+  async function commitChanges() {
     if (!token.trim()) {
       alert("Inserisci il GitHub token.")
-      return
-    }
-
-    if (staging.length === 0) {
-      alert("Nessun libro da salvare.")
       return
     }
 
@@ -149,23 +177,9 @@ export default function App() {
 
     try {
       const file = await getBooksFile(token)
-      const current = JSON.parse(file.content) as Book[]
-
-      const merged = [...current]
-
-      for (const b of staging) {
-        const exists =
-          b.isbn &&
-          merged.some((x) => x.isbn && x.isbn === b.isbn)
-
-        if (!exists) merged.push(b)
-      }
-
-      await putBooksFile(token, merged, file.sha)
-
-      setBooks(merged)
-      setStaging([])
-      setMessage("Commit completato. Ricarica tra qualche secondo.")
+      await putBooksFile(token, workingBooks, file.sha)
+      setDirty(false)
+      setMessage("Modifiche salvate.")
     } catch (err: any) {
       setMessage(err?.message ?? "Errore durante il commit.")
     }
@@ -180,11 +194,10 @@ export default function App() {
       <h1>Personal Library</h1>
 
       {/* ---------- Token ---------- */}
-      <section style={{ marginBottom: 24 }}>
-        <h3>GitHub token</h3>
+      <section>
         <input
           type="password"
-          placeholder="Personal access token"
+          placeholder="GitHub token"
           value={token}
           onChange={(e) => setToken(e.target.value)}
           style={{ width: "100%" }}
@@ -192,135 +205,85 @@ export default function App() {
       </section>
 
       {/* ---------- Add book ---------- */}
-      <section style={{ padding: 16, border: "1px solid #ddd", borderRadius: 8 }}>
+      <section style={{ marginTop: 20 }}>
         <h3>Aggiungi libro</h3>
+        <input placeholder="ISBN" value={isbn} onChange={(e) => setIsbn(e.target.value)} />
+        <button onClick={autofillFromISBN}>Autocompleta</button>
 
-        <div style={{ display: "flex", gap: 8 }}>
-          <input
-            placeholder="ISBN (opzionale)"
-            value={isbn}
-            onChange={(e) => setIsbn(e.target.value)}
-            style={{ flex: 1 }}
-          />
-          <button onClick={autofillFromISBN}>
-            Autocompleta da ISBN
-          </button>
-        </div>
+        <div style={{ display: "grid", gap: 6, marginTop: 10 }}>
+          <input placeholder="Titolo" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input placeholder="Autori" value={authors} onChange={(e) => setAuthors(e.target.value)} />
+          <input placeholder="Editore" value={publisher} onChange={(e) => setPublisher(e.target.value)} />
+          <input placeholder="Anno" value={year} onChange={(e) => setYear(e.target.value)} />
+          <input placeholder="Lingua" value={language} onChange={(e) => setLanguage(e.target.value)} />
+          <input placeholder="Categoria" value={category} onChange={(e) => setCategory(e.target.value)} />
+          <input placeholder="Copertina URL" value={coverUrl} onChange={(e) => setCoverUrl(e.target.value)} />
 
-        <div style={{ marginTop: 12, display: "grid", gap: 8 }}>
-          <input
-            placeholder="Titolo"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <input
-            placeholder="Autori (separati da virgola)"
-            value={authors}
-            onChange={(e) => setAuthors(e.target.value)}
-          />
-          <input
-            placeholder="Editore"
-            value={publisher}
-            onChange={(e) => setPublisher(e.target.value)}
-          />
-          <input
-            placeholder="Anno"
-            value={year}
-            onChange={(e) => setYear(e.target.value)}
-          />
-          <input
-            placeholder="Lingua"
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-          />
-          <input
-            placeholder="Categoria"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          />
-          <input
-            placeholder="URL copertina"
-            value={coverUrl}
-            onChange={(e) => setCoverUrl(e.target.value)}
-          />
-
-          <select
-            value={status}
-            onChange={(e) =>
-              setStatus(e.target.value as ReadingStatus)
-            }
-          >
-            <option value="Letto">Letto</option>
-            <option value="Non letto">Non letto</option>
-            <option value="In lettura">In lettura</option>
-            <option value="Da acquistare">Da acquistare</option>
+          <select value={status} onChange={(e) => setStatus(e.target.value as ReadingStatus)}>
+            <option value="letto">Letto</option>
+            <option value="non letto">Non letto</option>
+            <option value="in lettura">In lettura</option>
+            <option value="da acquistare">Da acquistare</option>
           </select>
         </div>
 
-        <button
-          style={{ marginTop: 12 }}
-          onClick={addToStaging}
-        >
-          Aggiungi alla lista
+        <button onClick={addBook} style={{ marginTop: 10 }}>
+          Aggiungi
         </button>
-
-        <p style={{ fontStyle: "italic" }}>{message}</p>
       </section>
 
-      {/* ---------- Staging ---------- */}
-      <section style={{ marginTop: 24 }}>
-        <h3>Libri da salvare ({staging.length})</h3>
-
-        {staging.map((b, i) => (
-          <div key={i} style={{ padding: 8, borderBottom: "1px solid #eee" }}>
-            <strong>{b.title}</strong>{" "}
-            {b.authors.length > 0 && `— ${b.authors.join(", ")}`}
-          </div>
-        ))}
-
-        <button
-          style={{ marginTop: 12 }}
-          onClick={commitAll}
-        >
-          Commit all books
+      {/* ---------- Commit ---------- */}
+      <section style={{ marginTop: 20 }}>
+        <button disabled={!dirty} onClick={commitChanges}>
+          Commit changes
         </button>
+        {dirty && <span> ● modifiche non salvate</span>}
+        <p>{message}</p>
       </section>
 
       {/* ---------- Library ---------- */}
-      <section style={{ marginTop: 32 }}>
-        <h2>Libreria ({sortedBooks.length})</h2>
+      <section style={{ marginTop: 30 }}>
+        <h2>Libreria</h2>
 
-        {sortedBooks.map((b, i) => (
-          <div
-            key={i}
-            style={{
-              display: "flex",
-              gap: 12,
-              padding: 12,
-              border: "1px solid #eee",
-              borderRadius: 8,
-              marginBottom: 8,
-            }}
-          >
-            {b.coverUrl && (
-              <img
-                src={b.coverUrl}
-                alt=""
-                style={{ height: 100, objectFit: "contain" }}
-              />
-            )}
-            <div>
-              <div style={{ fontWeight: 700 }}>{b.title}</div>
-              <div>{b.authors.join(", ")}</div>
-              <div style={{ opacity: 0.8 }}>
-                {b.publisher} · {b.year} · {b.language}
-              </div>
-              <div>
-                <em>{b.status}</em>
-              </div>
+        {sortedBooks.map((b) => {
+          const id = b.isbn ?? b.addedAt
+          const isEditing = editingId === id
+
+          return (
+            <div key={id} style={{ border: "1px solid #ddd", padding: 12, marginBottom: 8 }}>
+              {!isEditing ? (
+                <>
+                  <strong>{b.title}</strong> — {b.authors.join(", ")}  
+                  <div>{b.publisher} · {b.year} · {b.language}</div>
+                  <div>{b.category} · <em>{b.status}</em></div>
+                  <button onClick={() => startEdit(b)}>Modifica</button>
+                </>
+              ) : (
+                <>
+                  <input value={editDraft!.title} onChange={(e) => setEditDraft({ ...editDraft!, title: e.target.value })} />
+                  <input value={editDraft!.authors.join(", ")} onChange={(e) => setEditDraft({ ...editDraft!, authors: parseAuthors(e.target.value) })} />
+                  <input value={editDraft!.publisher ?? ""} onChange={(e) => setEditDraft({ ...editDraft!, publisher: e.target.value })} />
+                  <input value={editDraft!.year ?? ""} onChange={(e) => setEditDraft({ ...editDraft!, year: parseInt(e.target.value, 10) })} />
+                  <input value={editDraft!.language ?? ""} onChange={(e) => setEditDraft({ ...editDraft!, language: e.target.value })} />
+                  <input value={editDraft!.category ?? ""} onChange={(e) => setEditDraft({ ...editDraft!, category: e.target.value })} />
+
+                  <select
+                    value={editDraft!.status}
+                    onChange={(e) => setEditDraft({ ...editDraft!, status: e.target.value as ReadingStatus })}
+                  >
+                    <option value="letto">Letto</option>
+                    <option value="non letto">Non letto</option>
+                    <option value="in lettura">In lettura</option>
+                    <option value="da acquistare">Da acquistare</option>
+                  </select>
+
+                  <button onClick={saveEdit}>Salva</button>
+                  <button onClick={cancelEdit}>Annulla</button>
+                </>
+              )}
             </div>
-          </div>
-        ))}
+          )
+        })}
       </section>
     </div>
   )
