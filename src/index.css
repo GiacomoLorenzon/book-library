@@ -277,3 +277,96 @@ hr {
 }
 
 
+
+/* =========================
+   Mobile (≤ 600px)
+========================= */
+
+@media (max-width: 600px) {
+  /* ---------- Page ---------- */
+
+  html,
+  body {
+    max-width: 100%;
+    margin: 0;
+    padding: 2em 0.5rem;
+  }
+
+  #root {
+    padding: 0rem 1rem;
+  }
+
+  /* ---------- Headings ---------- */
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  /* ---------- Book row ---------- */
+
+  .book-row {
+    gap: 0.6rem;
+  }
+
+  .book-cover {
+    width: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;   /* vertical centring */
+  }
+
+  .book-cover-fallback {
+    font-size: 1.2rem;
+  }
+
+  /* ---------- Typography ---------- */
+
+  .small {
+    font-size: 0.85rem;
+  }
+
+  /* ---------- Edit button ---------- */
+
+  .edit-button {
+    padding: 0.1rem 0.2rem;
+  }
+
+  .edit-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* ---------- Forms ---------- */
+
+  input,
+  select,
+  button {
+    font-size: 0.95rem;
+  }
+
+  input,
+  select {
+    padding: 0.45rem 0.6rem;
+  }
+
+  /* ---------- Edit mode spacing ---------- */
+
+  .book-meta-edit {
+    gap: 0.6rem;
+  }
+
+  .edit-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* ---------- Touch comfort ---------- */
+
+  button {
+    min-height: 36px;
+  }
+}
