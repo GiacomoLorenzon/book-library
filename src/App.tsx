@@ -56,7 +56,7 @@ export default function App() {
   const [language, setLanguage] = useState("")
   const [category, setCategory] = useState("")
   const [coverUrl, setCoverUrl] = useState("")
-  const [status, setStatus] = useState<ReadingStatus>("non letto")
+  const [status, setStatus] = useState<ReadingStatus>("Non letto")
 
   /* =========================
      Derived
@@ -134,7 +134,7 @@ export default function App() {
     setLanguage("")
     setCategory("")
     setCoverUrl("")
-    setStatus("non letto")
+    setStatus("Non letto")
 
     setMessage("Libro aggiunto (non ancora salvato).")
   }
@@ -221,7 +221,7 @@ export default function App() {
 
           <select value={status} onChange={(e) => setStatus(e.target.value as ReadingStatus)}>
             <option value="letto">Letto</option>
-            <option value="non letto">Non letto</option>
+            <option value="Non letto">Non letto</option>
             <option value="in lettura">In lettura</option>
             <option value="da acquistare">Da acquistare</option>
           </select>
@@ -272,7 +272,7 @@ export default function App() {
                     onChange={(e) => setEditDraft({ ...editDraft!, status: e.target.value as ReadingStatus })}
                   >
                     <option value="letto">Letto</option>
-                    <option value="non letto">Non letto</option>
+                    <option value="Non letto">Non letto</option>
                     <option value="in lettura">In lettura</option>
                     <option value="da acquistare">Da acquistare</option>
                   </select>
