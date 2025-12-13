@@ -39,9 +39,9 @@ export async function fetchBookFromISBN(isbnInput: string): Promise<Book> {
       authors,
       publisher: Array.isArray(raw.publishers) ? raw.publishers[0] : undefined,
       year,
-      pages: raw.number_of_pages,
       language: Array.isArray(raw.languages) ? raw.languages?.[0]?.key : undefined,
       coverUrl: `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`,
+      status: "Non letto",
       addedAt: new Date().toISOString(),
     }
   }
@@ -61,9 +61,9 @@ export async function fetchBookFromISBN(isbnInput: string): Promise<Book> {
         authors: item.authors ?? [],
         publisher: item.publisher,
         year: Number.isFinite(year) ? year : undefined,
-        pages: item.pageCount,
         language: item.language,
         coverUrl: item.imageLinks?.thumbnail,
+        status: "Non letto",
         addedAt: new Date().toISOString(),
       }
     }

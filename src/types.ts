@@ -1,8 +1,8 @@
 export type ReadingStatus =
-  | "letto"
-  | "non letto"
-  | "in lettura"
-  | "da acquistare"
+  | "Letto"
+  | "Non letto"
+  | "In lettura"
+  | "Da acquistare"
 
 export type Book = {
   isbn?: string

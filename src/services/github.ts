@@ -1,56 +1,54 @@
-export const GITHUB_OWNER = "GiacomoLorenzon"
-export const GITHUB_REPO = "book-library"
-export const GITHUB_BRANCH = "main"
-export const BOOKS_PATH = "src/data/books.json"
-
-
 import type { Book } from "../types"
 
-export type RepoRef = { owner: string; repo: string; branch?: string }
+const OWNER = "GiacomoLorenzon"
+const REPO = "book-library"
+const BRANCH = "main"
+const PATH = "src/data/books.json"
 
-type GetFileResult = { content: string; sha: string }
-
-function b64encodeUtf8(s: string): string {
-  // btoa non gestisce bene UTF-8 puro; normalizziamo
+function encodeBase64Utf8(s: string): string {
   return btoa(unescape(encodeURIComponent(s)))
 }
 
-function b64decodeUtf8(b64: string): string {
-  return decodeURIComponent(escape(atob(b64)))
+function decodeBase64Utf8(s: string): string {
+  return decodeURIComponent(escape(atob(s)))
 }
 
-export async function getBooksFile(
-  token: string,
-  ref: RepoRef,
-  path = "src/data/books.json"
-): Promise<GetFileResult> {
-  const branch = ref.branch ?? "main"
-  const url = `https://api.github.com/repos/${ref.owner}/${ref.repo}/contents/${path}?ref=${branch}`
+export async function getBooksFile(token: string): Promise<{
+  content: string
+  sha: string
+}> {
+  const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}?ref=${BRANCH}`
+
   const r = await fetch(url, {
-    headers: { Authorization: `token ${token}` },
+    headers: {
+      Authorization: `token ${token}`,
+    },
   })
-  if (!r.ok) throw new Error("Impossibile leggere books.json dal repo.")
+
+  if (!r.ok) {
+    throw new Error("Impossibile leggere books.json dal repository.")
+  }
+
   const raw = await r.json()
+
   return {
-    content: b64decodeUtf8((raw.content as string).replace(/\n/g, "")),
-    sha: raw.sha as string,
+    content: decodeBase64Utf8(raw.content.replace(/\n/g, "")),
+    sha: raw.sha,
   }
 }
 
 export async function putBooksFile(
   token: string,
-  ref: RepoRef,
-  updated: Book[],
-  sha: string,
-  path = "src/data/books.json"
+  books: Book[],
+  sha: string
 ): Promise<void> {
-  const branch = ref.branch ?? "main"
-  const url = `https://api.github.com/repos/${ref.owner}/${ref.repo}/contents/${path}`
+  const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`
+
   const body = {
-    message: "Update books.json (via website)",
-    content: b64encodeUtf8(JSON.stringify(updated, null, 2)),
+    message: `Update books.json (${books.length} books)`,
+    content: encodeBase64Utf8(JSON.stringify(books, null, 2)),
     sha,
-    branch,
+    branch: BRANCH,
   }
 
   const r = await fetch(url, {
@@ -61,8 +59,9 @@ export async function putBooksFile(
     },
     body: JSON.stringify(body),
   })
+
   if (!r.ok) {
-    const t = await r.text()
-    throw new Error(`Commit fallito: ${t}`)
+    const txt = await r.text()
+    throw new Error(`Commit fallito: ${txt}`)
   }
 }

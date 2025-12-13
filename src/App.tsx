@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import type { Book, ReadingStatus } from "./types"
 import booksSeed from "./data/books.json"
 import { fetchBookFromISBN } from "./services/isbn"
@@ -46,7 +46,7 @@ export default function App() {
   const [language, setLanguage] = useState<string>("")
   const [category, setCategory] = useState<string>("")
   const [coverUrl, setCoverUrl] = useState<string>("")
-  const [status, setStatus] = useState<ReadingStatus>("non letto")
+  const [status, setStatus] = useState<ReadingStatus>("Non letto")
 
   const [message, setMessage] = useState<string>("")
 
@@ -125,7 +125,7 @@ export default function App() {
     setLanguage("")
     setCategory("")
     setCoverUrl("")
-    setStatus("non letto")
+    setStatus("Non letto")
 
     setMessage("Libro aggiunto alla lista temporanea.")
   }
@@ -250,10 +250,10 @@ export default function App() {
               setStatus(e.target.value as ReadingStatus)
             }
           >
-            <option value="letto">Letto</option>
-            <option value="non letto">Non letto</option>
-            <option value="in lettura">In lettura</option>
-            <option value="da acquistare">Da acquistare</option>
+            <option value="Letto">Letto</option>
+            <option value="Non letto">Non letto</option>
+            <option value="In lettura">In lettura</option>
+            <option value="Da acquistare">Da acquistare</option>
           </select>
         </div>
 
