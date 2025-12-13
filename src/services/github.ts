@@ -1,3 +1,9 @@
+export const GITHUB_OWNER = "GiacomoLorenzon"
+export const GITHUB_REPO = "book-library"
+export const GITHUB_BRANCH = "main"
+export const BOOKS_PATH = "src/data/books.json"
+
+
 import type { Book } from "../types"
 
 export type RepoRef = { owner: string; repo: string; branch?: string }
