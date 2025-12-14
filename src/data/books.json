@@ -26,5 +26,47 @@
     "coverUrl": "http://books.google.com/books/content?id=PMCe0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
     "addedAt": "2025-12-13T19:35:26.781Z"
+  },
+  {
+    "isbn": "9782070744619",
+    "title": "L'homme qui plantait des arbres",
+    "authors": [
+      "Jean Giono"
+    ],
+    "publisher": "Gallimard",
+    "year": 1996,
+    "language": "Francese",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9782070744619-L.jpg",
+    "status": "Letto",
+    "addedAt": "2025-12-14T01:37:49.230Z"
+  },
+  {
+    "isbn": "9788807887352",
+    "title": "Sulla traccia di Nives",
+    "authors": [
+      "Erri De Luca"
+    ],
+    "publisher": "Feltrinelli",
+    "year": 2016,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=ImqZjgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T01:38:56.622Z"
+  },
+  {
+    "isbn": "9788804668374",
+    "title": "Lezioni americane",
+    "authors": [
+      "Italo Calvino"
+    ],
+    "publisher": "Mondadori",
+    "year": 2016,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=CYa5DAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-14T01:40:10.101Z"
   }
 ]
