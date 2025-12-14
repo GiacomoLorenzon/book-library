@@ -82,5 +82,19 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788838946257-L.jpg",
     "status": "Non letto",
     "addedAt": "2025-12-14T10:55:35.680Z"
+  },
+  {
+    "isbn": "9788804772088",
+    "title": "Palomar",
+    "authors": [
+      "Italo Calvino"
+    ],
+    "publisher": "Mondadori",
+    "year": 2022,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=rKJ1zwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-14T11:04:56.821Z"
   }
 ]
