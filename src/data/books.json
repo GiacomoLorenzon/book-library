@@ -96,5 +96,61 @@
     "coverUrl": "http://books.google.com/books/content?id=rKJ1zwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
     "addedAt": "2025-12-14T11:04:56.821Z"
+  },
+  {
+    "isbn": "9788807881084",
+    "title": "Il giardino dei Finzi-Contini",
+    "authors": [
+      "Giorgio Bassani"
+    ],
+    "publisher": "Feltrinelli",
+    "year": 2012,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788807881084-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T11:06:05.465Z"
+  },
+  {
+    "isbn": "9788845909825",
+    "title": "Flatlandia",
+    "authors": [
+      "Edson A. Abbott"
+    ],
+    "publisher": "Adelphi",
+    "year": 2015,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845909825-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T11:07:08.152Z"
+  },
+  {
+    "isbn": "9788845924002",
+    "title": "Gioia di scrivere",
+    "authors": [
+      "Wisława Szymborska"
+    ],
+    "publisher": "Adelphi",
+    "year": 2009,
+    "language": "Italiano",
+    "category": "Poesia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845924002-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T11:07:57.133Z"
+  },
+  {
+    "isbn": "9788845936258",
+    "title": "Appunti 1942-1993",
+    "authors": [
+      "Elias Canetti"
+    ],
+    "publisher": "Adelphi",
+    "year": 2021,
+    "language": "Italiano",
+    "category": "Biografia",
+    "coverUrl": "http://books.google.com/books/content?id=FBqczgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-14T11:09:08.677Z"
   }
 ]
