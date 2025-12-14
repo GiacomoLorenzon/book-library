@@ -152,5 +152,89 @@
     "coverUrl": "http://books.google.com/books/content?id=FBqczgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
     "addedAt": "2025-12-14T11:09:08.677Z"
+  },
+  {
+    "isbn": "9782070380596",
+    "title": "Au bonheur des ogres",
+    "authors": [
+      "Daniel Pennac"
+    ],
+    "publisher": "Gallimard",
+    "year": 1993,
+    "language": "Francese",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9782070380596-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:41:00.268Z"
+  },
+  {
+    "isbn": "9788845929083",
+    "title": "L'orchessa e altri racconti",
+    "authors": [
+      "Irène Némirovsky"
+    ],
+    "publisher": "Adelphi",
+    "year": 2014,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=F1y3oQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:41:50.351Z"
+  },
+  {
+    "isbn": "9788806181062",
+    "title": "Il primo libro di filosofia della scienza",
+    "authors": [
+      "Samir Okasha"
+    ],
+    "publisher": "Einaudi",
+    "year": 2006,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "http://books.google.com/books/content?id=rDx0AAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-14T12:43:30.655Z"
+  },
+  {
+    "isbn": "9788845927867",
+    "title": "L'avversario",
+    "authors": [
+      "Emmanuel Carrère"
+    ],
+    "publisher": "Adelphi",
+    "year": 2013,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845927867-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:44:40.316Z"
+  },
+  {
+    "isbn": "9788883585542",
+    "title": "Viaggio nella mente di un uomo che non dimenticava nulla",
+    "authors": [
+      "Aleksandr Lurija"
+    ],
+    "publisher": "Armando Editore",
+    "year": 2004,
+    "language": "Italiano",
+    "category": "Medicina",
+    "coverUrl": "http://books.google.com/books/content?id=JTLmkmi_I24C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-14T12:45:31.916Z"
+  },
+  {
+    "isbn": "9780099557029",
+    "title": "Moveable Feast",
+    "authors": [
+      "Ernest Hemingway"
+    ],
+    "publisher": "Penguin Random House",
+    "year": 2011,
+    "language": "Inglese",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780099557029-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:47:23.207Z"
   }
 ]
