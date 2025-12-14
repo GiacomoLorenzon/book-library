@@ -46,6 +46,13 @@ export default function App() {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editDraft, setEditDraft] = useState<Book | null>(null)
 
+  /* ---------- Filters & sorting ---------- */
+
+  const [filterText, setFilterText] = useState("")
+  const [filterStatus, setFilterStatus] = useState<ReadingStatus | "all">("all")
+  const [sortBy, setSortBy] = useState<"year" | "title" | "addedAt">("year")
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
+
   /* ---------- Add-book form ---------- */
 
   const [isbn, setIsbn] = useState("")
@@ -62,14 +69,50 @@ export default function App() {
      Derived
   ========================= */
 
-  const sortedBooks = useMemo(() => {
-    return [...workingBooks].sort((a, b) => {
-      const ya = a.year ?? -1
-      const yb = b.year ?? -1
-      if (ya !== yb) return yb - ya
-      return a.title.localeCompare(b.title)
+  const visibleBooks = useMemo(() => {
+    const text = filterText.trim().toLowerCase()
+
+    const filtered = workingBooks.filter((b) => {
+      const matchesStatus =
+        filterStatus === "all" || b.status === filterStatus
+
+      const haystack = [
+        b.title,
+        b.authors.join(", "),
+        b.publisher,
+        b.category,
+        b.language,
+        b.status,
+        b.year ? String(b.year) : "",
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase()
+
+      const matchesText = !text || haystack.includes(text)
+
+      return matchesStatus && matchesText
     })
-  }, [workingBooks])
+
+    const sorted = [...filtered].sort((a, b) => {
+      const direction = sortDirection === "asc" ? 1 : -1
+
+      if (sortBy === "title") {
+        return direction * a.title.localeCompare(b.title)
+      }
+
+      if (sortBy === "addedAt") {
+        return direction * (a.addedAt.localeCompare(b.addedAt))
+      }
+
+      const ya = a.year ?? -Infinity
+      const yb = b.year ?? -Infinity
+      if (ya === yb) return direction * a.title.localeCompare(b.title)
+      return direction * (ya - yb)
+    })
+
+    return sorted
+  }, [filterStatus, filterText, sortBy, sortDirection, workingBooks])
 
   /* =========================
      ISBN autofill
@@ -161,6 +204,25 @@ export default function App() {
     )
     setDirty(true)
     cancelEdit()
+  }
+
+  /* =========================
+     Delete
+  ========================= */
+
+  function deleteBook(book: Book) {
+    const id = book.isbn ?? book.addedAt
+
+    setWorkingBooks((prev) =>
+      prev.filter((b) => !sameBook(b, book))
+    )
+    setDirty(true)
+
+    if (editingId === id) {
+      cancelEdit()
+    }
+
+    setMessage("Libro rimosso (non ancora salvato).")
   }
 
   /* =========================
@@ -291,7 +353,49 @@ export default function App() {
       <section>
         <h2>Consulta</h2>
 
-        {sortedBooks.map((b) => {
+        <div className="controls" style={{display: "flex", gap: "0.5em", flexWrap: "wrap", marginBottom: "1em"}}>
+          <input
+            placeholder="Filtra per titolo, autore, editore…"
+            value={filterText}
+            onChange={(e) => setFilterText(e.target.value)}
+          />
+
+          <select
+            value={filterStatus}
+            onChange={(e) =>
+              setFilterStatus(e.target.value as ReadingStatus | "all")
+            }
+          >
+            <option value="all">Tutti gli stati</option>
+            <option value="Letto">Letto</option>
+            <option value="Non letto">Non letto</option>
+            <option value="In lettura">In lettura</option>
+            <option value="Da acquistare">Da acquistare</option>
+          </select>
+
+          <select
+            value={sortBy}
+            onChange={(e) =>
+              setSortBy(e.target.value as "year" | "title" | "addedAt")
+            }
+          >
+            <option value="year">Ordina per anno</option>
+            <option value="title">Ordina per titolo</option>
+            <option value="addedAt">Ordina per data di inserimento</option>
+          </select>
+
+          <select
+            value={sortDirection}
+            onChange={(e) =>
+              setSortDirection(e.target.value as "asc" | "desc")
+            }
+          >
+            <option value="desc">Discendente</option>
+            <option value="asc">Ascendente</option>
+          </select>
+        </div>
+
+        {visibleBooks.map((b) => {
           const id = b.isbn ?? b.addedAt
           const isEditing = editingId === id
 
@@ -349,6 +453,18 @@ export default function App() {
                   >
                     <img
                       src="https://www.svgrepo.com/show/146083/pencil-edit-button.svg"
+                      alt=""
+                      className="edit-icon"
+                    />
+                  </button>
+                  <button
+                    className="edit-button"
+                    onClick={() => deleteBook(b)}
+                    aria-label="Elimina libro"
+                    title="Elimina"
+                  >
+                    <img
+                      src="https://www.svgrepo.com/show/433921/bin.svg"
                       alt=""
                       className="edit-icon"
                     />
