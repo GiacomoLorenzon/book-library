@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react"
+import type React from "react"
+import { useMemo, useRef, useState } from "react"
 import type { Book, ReadingStatus } from "./types"
 import booksSeed from "./data/books.json"
 import { fetchBookFromISBN } from "./services/isbn"
@@ -51,10 +52,11 @@ export default function App() {
   const [filterText, setFilterText] = useState("")
   const [filterStatus, setFilterStatus] = useState<ReadingStatus | "all">("all")
   const [sortBy, setSortBy] = useState<"year" | "title" | "addedAt">("year")
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
+const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
-  /* ---------- Add-book form ---------- */
+/* ---------- Add-book form ---------- */
 
+  const fileInputRef = useRef<HTMLInputElement | null>(null)
   const [isbn, setIsbn] = useState("")
   const [title, setTitle] = useState("")
   const [authors, setAuthors] = useState("")
@@ -141,6 +143,53 @@ export default function App() {
     } catch (err: any) {
       setMessage(err?.message ?? "Errore ISBN.")
     }
+  }
+
+  /* =========================
+     Barcode scan
+  ========================= */
+
+  async function handleBarcodeFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    const BarcodeDetectorCtor = (window as any).BarcodeDetector
+    if (!BarcodeDetectorCtor) {
+      setMessage("Il browser non supporta il barcode scanner.")
+      e.target.value = ""
+      return
+    }
+
+    setMessage("Scansiono il codice a barre…")
+
+    try {
+      const detector = new BarcodeDetectorCtor({
+        formats: ["ean_13", "ean_8", "code_128", "qr_code"],
+      })
+      const bitmap = await createImageBitmap(file)
+      const results = await detector.detect(bitmap)
+      const value = results[0]?.rawValue
+
+      if (!value) {
+        setMessage("Nessun codice trovato nell'immagine.")
+      } else {
+        setIsbn(value)
+        setMessage(`ISBN scansionato: ${value}`)
+      }
+    } catch (err: any) {
+      setMessage(err?.message ?? "Errore durante la scansione.")
+    } finally {
+      e.target.value = ""
+    }
+  }
+
+  function triggerBarcodeCapture() {
+    const BarcodeDetectorCtor = (window as any).BarcodeDetector
+    if (!BarcodeDetectorCtor) {
+      setMessage("Il browser non supporta il barcode scanner.")
+      return
+    }
+    fileInputRef.current?.click()
   }
 
   /* =========================
@@ -282,6 +331,25 @@ export default function App() {
           onClick={autofillFromISBN}>
             Autocompleta
         </button>
+        <button
+          style={{marginLeft: "1em", scale: "1.8", paddingTop: "0.8em"}}
+          className="edit-button"
+          onClick={triggerBarcodeCapture}
+          title="Scannerizza codice a barre">
+          <img
+            src="https://www.svgrepo.com/show/333675/barcode-reader.svg"
+            alt=""
+            className="edit-icon"
+          />
+        </button>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          capture="environment"
+          style={{display: "none"}}
+          onChange={handleBarcodeFile}
+        />
 
         <div className="Buttons">
           <input
@@ -437,7 +505,7 @@ export default function App() {
                     <div className="details">
                       {/* Line 1: AUTORE – publisher, year */}
                       <div>
-                        <span style={{textTransform: "uppercase"}}>{b.authors.join(", ")}</span>
+                        <span style={{textTransform: ""}}>{b.authors.join(", ")}</span>
                         {(b.publisher || b.year) && " – "}
                         {b.publisher}
                         {b.publisher && b.year && ", "}
