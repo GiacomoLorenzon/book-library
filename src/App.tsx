@@ -285,6 +285,7 @@ export default function App() {
 
         <div className="Buttons">
           <input
+            style={{marginTop: "2em"}}
             placeholder="Titolo"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -333,7 +334,11 @@ export default function App() {
           </select>
         </div>
 
-        <button onClick={addBook}>Aggiungi</button>
+        <button
+          style={{marginTop: "2em"}}
+          onClick={addBook}>
+            Aggiungi
+        </button>
         <p className="small">{message}</p>
       </section>
 
@@ -353,14 +358,17 @@ export default function App() {
       <section>
         <h2>Consulta</h2>
 
-        <div className="controls" style={{display: "flex", gap: "0.5em", flexWrap: "wrap", marginBottom: "1em"}}>
+        <div className="controls">
           <input
+            style={{width: "99%"}}
             placeholder="Filtra per titolo, autore, editore…"
             value={filterText}
             onChange={(e) => setFilterText(e.target.value)}
           />
-
+        </div>
+        <div className="controls">
           <select
+            style={{width: "32%"}}
             value={filterStatus}
             onChange={(e) =>
               setFilterStatus(e.target.value as ReadingStatus | "all")
@@ -374,6 +382,7 @@ export default function App() {
           </select>
 
           <select
+            style={{width: "32%"}}
             value={sortBy}
             onChange={(e) =>
               setSortBy(e.target.value as "year" | "title" | "addedAt")
@@ -385,6 +394,7 @@ export default function App() {
           </select>
 
           <select
+            style={{width: "32%"}}
             value={sortDirection}
             onChange={(e) =>
               setSortDirection(e.target.value as "asc" | "desc")

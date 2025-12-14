@@ -19,6 +19,7 @@ body {
 
 body {
   border-radius: 30px;
+  box-shadow: #e8e8e8 3px 3px 7px;
 }
 
 /* =========================
@@ -90,8 +91,10 @@ select,
 button {
   font-family: inherit;
   font-size: 0.9rem;
-  margin: 0.25em 0em;
+  margin: 0.3em 0em;
   border-radius: 30px;
+  transition: background-color 200ms ease, border-color 200ms ease,
+    color 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
 }
 
 input,
@@ -231,6 +234,13 @@ hr {
   opacity: 0.45;
 }
 
+.controls {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+  width: 100%
+}
 
 /* =========================
    Utility
