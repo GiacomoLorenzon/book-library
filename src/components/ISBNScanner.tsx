@@ -1,4 +1,7 @@
-import { Html5QrcodeScanner } from "html5-qrcode"
+import {
+  Html5QrcodeScanner,
+  Html5QrcodeSupportedFormats,
+} from "html5-qrcode"
 import { useEffect } from "react"
 
 export function ISBNScanner({
@@ -14,7 +17,10 @@ export function ISBNScanner({
       {
         fps: 10,
         qrbox: { width: 250, height: 150 },
-        formatsToSupport: ["EAN_13", "EAN_8"],
+        formatsToSupport: [
+          Html5QrcodeSupportedFormats.EAN_13,
+          Html5QrcodeSupportedFormats.EAN_8,
+        ],
       },
       false
     )
