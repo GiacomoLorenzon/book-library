@@ -169,7 +169,7 @@ hr {
 ========================= */
 .book-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.9rem;
   padding: 0.5em 0;
 }
@@ -305,7 +305,7 @@ hr {
   }
 
   #root {
-    padding: 0rem 1rem;
+    padding: 0rem 0.5em;
   }
 
   /* ---------- Headings ---------- */
@@ -380,5 +380,10 @@ hr {
 
   button {
     min-height: 36px;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: nowrap;
   }
 }

@@ -1,9 +1,9 @@
-import type React from "react"
-import { useMemo, useRef, useState } from "react"
+import { useMemo, useState } from "react"
 import type { Book, ReadingStatus } from "./types"
 import booksSeed from "./data/books.json"
 import { fetchBookFromISBN } from "./services/isbn"
 import { getBooksFile, putBooksFile } from "./services/github"
+import { ISBNScanner } from "./components/ISBNScanner"
 
 /* =========================
    Utilities
@@ -56,7 +56,6 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
 /* ---------- Add-book form ---------- */
 
-  const fileInputRef = useRef<HTMLInputElement | null>(null)
   const [isbn, setIsbn] = useState("")
   const [title, setTitle] = useState("")
   const [authors, setAuthors] = useState("")
@@ -67,6 +66,9 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
   const [coverUrl, setCoverUrl] = useState("")
   const [status, setStatus] = useState<ReadingStatus>("Non letto")
 
+/* ---------- Camera ---------- */
+
+  const [showScanner, setShowScanner] = useState(false)
   /* =========================
      Derived
   ========================= */
@@ -149,48 +151,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
      Barcode scan
   ========================= */
 
-  async function handleBarcodeFile(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    if (!file) return
 
-    const BarcodeDetectorCtor = (window as any).BarcodeDetector
-    if (!BarcodeDetectorCtor) {
-      setMessage("Il browser non supporta il barcode scanner.")
-      e.target.value = ""
-      return
-    }
-
-    setMessage("Scansiono il codice a barre…")
-
-    try {
-      const detector = new BarcodeDetectorCtor({
-        formats: ["ean_13", "ean_8", "code_128", "qr_code"],
-      })
-      const bitmap = await createImageBitmap(file)
-      const results = await detector.detect(bitmap)
-      const value = results[0]?.rawValue
-
-      if (!value) {
-        setMessage("Nessun codice trovato nell'immagine.")
-      } else {
-        setIsbn(value)
-        setMessage(`ISBN scansionato: ${value}`)
-      }
-    } catch (err: any) {
-      setMessage(err?.message ?? "Errore durante la scansione.")
-    } finally {
-      e.target.value = ""
-    }
-  }
-
-  function triggerBarcodeCapture() {
-    const BarcodeDetectorCtor = (window as any).BarcodeDetector
-    if (!BarcodeDetectorCtor) {
-      setMessage("Il browser non supporta il barcode scanner.")
-      return
-    }
-    fileInputRef.current?.click()
-  }
 
   /* =========================
      Add new book
@@ -332,24 +293,27 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
             Autocompleta
         </button>
         <button
-          style={{marginLeft: "1em", scale: "1.8", paddingTop: "0.8em"}}
+          style={{ marginLeft: "1em", scale: "1.8", paddingTop: "0.8em" }}
           className="edit-button"
-          onClick={triggerBarcodeCapture}
-          title="Scannerizza codice a barre">
+          onClick={() => setShowScanner(true)}
+          title="Scannerizza ISBN"
+        >
           <img
             src="https://www.svgrepo.com/show/333675/barcode-reader.svg"
             alt=""
             className="edit-icon"
           />
         </button>
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          capture="environment"
-          style={{display: "none"}}
-          onChange={handleBarcodeFile}
-        />
+        {showScanner && (
+          <ISBNScanner
+            onDetected={(code) => {
+              setIsbn(code)
+              setShowScanner(false)
+              autofillFromISBN()
+            }}
+            onClose={() => setShowScanner(false)}
+          />
+        )}
 
         <div className="Buttons">
           <input
@@ -428,13 +392,13 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
         <div className="controls">
           <input
-            style={{width: "99%"}}
+            style={{width: "100%"}}
             placeholder="Filtra per titolo, autore, editore…"
             value={filterText}
             onChange={(e) => setFilterText(e.target.value)}
           />
         </div>
-        <div className="controls">
+        <div className="controls" style={{marginBottom: "2em"}}>
           <select
             style={{width: "32%"}}
             value={filterStatus}
@@ -450,7 +414,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
           </select>
 
           <select
-            style={{width: "32%"}}
+            style={{width: "33%"}}
             value={sortBy}
             onChange={(e) =>
               setSortBy(e.target.value as "year" | "title" | "addedAt")
@@ -522,7 +486,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                       </div>
                     </div>
                   </div>
-
+                  <div style={{display: "flex", flexDirection: "column"}}>
                   <button
                     className="edit-button"
                     onClick={() => startEdit(b)}
@@ -547,6 +511,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                       className="edit-icon"
                     />
                   </button>
+                  </div>
                 </div>
               ) : (
                 /* =========================
