@@ -68,5 +68,19 @@
     "coverUrl": "http://books.google.com/books/content?id=CYa5DAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
     "addedAt": "2025-12-14T01:40:10.101Z"
+  },
+  {
+    "isbn": "9788838946257",
+    "title": "Chi dice e chi tace",
+    "authors": [
+      "Chiara Valerio"
+    ],
+    "publisher": "Sellerio Editore Palermo",
+    "year": 2024,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788838946257-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T10:55:35.680Z"
   }
 ]
