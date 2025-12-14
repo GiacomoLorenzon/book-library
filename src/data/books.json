@@ -236,5 +236,19 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780099557029-L.jpg",
     "status": "Non letto",
     "addedAt": "2025-12-14T12:47:23.207Z"
+  },
+  {
+    "isbn": "9788838946035",
+    "title": "Riusciranno i nostri eroi a ritrovare l'amico misteriosamente scomparso in Sud America?",
+    "authors": [
+      "Antonio Manzini"
+    ],
+    "publisher": "Sellerio editore Palermo",
+    "year": 2023,
+    "language": "Italiano",
+    "category": "Giallo",
+    "coverUrl": "http://books.google.com/books/content?id=GXw-0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:53:06.071Z"
   }
 ]
