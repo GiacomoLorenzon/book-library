@@ -250,5 +250,59 @@
     "coverUrl": "http://books.google.com/books/content?id=GXw-0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
     "addedAt": "2025-12-14T12:53:06.071Z"
+  },
+  {
+    "isbn": "6788015917578",
+    "title": "La signora nel furgone",
+    "authors": [
+      "Alan Bennet"
+    ],
+    "publisher": "Adelphi",
+    "year": 1989,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:56:04.025Z"
+  },
+  {
+    "isbn": "9788845929649",
+    "title": "Finzioni",
+    "authors": [
+      "Jorge Luis Borges"
+    ],
+    "publisher": "Adelphi",
+    "year": 2015,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845929649-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:56:38.420Z"
+  },
+  {
+    "isbn": "9788845933950",
+    "title": "Vite che non sono la mia",
+    "authors": [
+      "Emmanuel Carrère"
+    ],
+    "publisher": "Adelphi",
+    "year": 2019,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=58FrxgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:57:13.314Z"
+  },
+  {
+    "isbn": "5788203923139",
+    "title": "Quella sera dorata",
+    "authors": [
+      "Peter Cameron"
+    ],
+    "publisher": "Adelphi",
+    "year": 2002,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "status": "Non letto",
+    "addedAt": "2025-12-14T12:58:59.228Z"
   }
 ]
