@@ -5,7 +5,7 @@ import { fetchBookFromISBN } from "./services/isbn"
 import { getBooksFile, putBooksFile } from "./services/github"
 import { ISBNScanner } from "./components/ISBNScanner"
 
-const PLACEHOLDER_COVER = "/placeholder-cover.svg"
+const PLACEHOLDER_COVER = `${import.meta.env.BASE_URL}placeholder-cover.svg`
 
 /* =========================
    Utilities
