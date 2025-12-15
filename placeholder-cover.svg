@@ -1,0 +1,15 @@
+<svg width="120" height="180" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">Segnaposto copertina</title>
+<desc id="desc">Copertina segnaposto con icona libro</desc>
+<defs>
+  <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#ececec" />
+    <stop offset="100%" stop-color="#d8d8d8" />
+  </linearGradient>
+</defs>
+<rect x="4" y="4" width="112" height="172" rx="10" fill="url(#grad)" stroke="#c2c2c2" stroke-width="3"/>
+<rect x="22" y="42" width="76" height="96" rx="6" fill="#fefefe" stroke="#c2c2c2" stroke-width="2"/>
+<path d="M35 60h50M35 74h50M35 88h50M35 102h32" stroke="#a6a6a6" stroke-width="4" stroke-linecap="round"/>
+<rect x="40" y="126" width="40" height="8" rx="4" fill="#c2c2c2"/>
+<rect x="24" y="28" width="72" height="8" rx="4" fill="#c2c2c2"/>
+</svg>
