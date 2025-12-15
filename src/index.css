@@ -179,7 +179,6 @@ hr {
   width: 48px;
   aspect-ratio: 2 / 3;
   flex-shrink: 0;
-  background: #f2f2f2;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -220,7 +219,7 @@ hr {
 .book-cover.is-fallback .book-cover-fallback {
   display: flex;
   background: #ededed;
-  border: 1px solid #000;
+  border-radius: 2px;
 }
 
 .book-meta {
