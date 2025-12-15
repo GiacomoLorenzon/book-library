@@ -32,8 +32,16 @@ function coverWithFallback(url?: string): string {
 }
 
 function handleCoverError(e: SyntheticEvent<HTMLImageElement>) {
-  // Se la copertina remota non carica, passa al segnaposto e interrompe ulteriori errori.
-  if (e.currentTarget.src.endsWith(PLACEHOLDER_COVER)) return
+  // Se la copertina remota non carica, passa al segnaposto e mostra il fallback testuale.
+  if (!e.currentTarget.closest(".book-cover")?.classList.contains("is-fallback")) {
+    e.currentTarget.closest(".book-cover")?.classList.add("is-fallback")
+  }
+
+  if (e.currentTarget.src.endsWith(PLACEHOLDER_COVER)) {
+    e.currentTarget.style.display = "none"
+    return
+  }
+
   e.currentTarget.src = PLACEHOLDER_COVER
 }
 
@@ -453,6 +461,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
           const id = b.isbn ?? b.addedAt
           const isEditing = editingId === id
           const coverSrc = coverWithFallback(b.coverUrl)
+          const showPlaceholder = !b.coverUrl?.trim()
 
           return (
             <div
@@ -464,12 +473,17 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                   VIEW MODE
                 ========================= */
                 <div className="book-row">
-                  <div className="book-cover">
+                  <div
+                    className={`book-cover ${showPlaceholder ? "is-fallback" : ""}`}
+                  >
                     <img
                       src={coverSrc}
                       alt={`Copertina di ${b.title}`}
                       onError={handleCoverError}
                     />
+                    <div className="book-cover-fallback">
+                      <span>{b.title}</span>
+                    </div>
                   </div>
 
                   <div className="book-meta">
@@ -528,12 +542,18 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                   EDIT MODE
                 ========================= */
                 <div className="book-row">
-                  <div className="book-cover">
+                  <div
+                    className={`book-cover ${!editDraft!.coverUrl?.trim() ? "is-fallback" : ""}`}
+                  >
                     <img
                       src={coverWithFallback(editDraft!.coverUrl)}
                       alt={`Copertina di ${editDraft!.title}`}
                       onError={handleCoverError}
                     />
+                    <div
+                      className="book-cover-fallback">
+                      <span>{editDraft!.title}</span>
+                    </div>
                   </div>
 
                   <div className="book-meta book-meta-edit">
