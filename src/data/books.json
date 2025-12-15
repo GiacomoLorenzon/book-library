@@ -304,5 +304,212 @@
     "category": "Narrativa",
     "status": "Non letto",
     "addedAt": "2025-12-14T12:58:59.228Z"
+  },
+  {
+    "isbn": "3718106219222",
+    "title": "Armi, acciaio e malattie",
+    "authors": [
+      "Jared Diamond"
+    ],
+    "publisher": "Einaudi",
+    "year": 1997,
+    "language": "Italiano",
+    "category": "Geostoria",
+    "status": "In lettura",
+    "addedAt": "2025-12-15T21:54:13.691Z"
+  },
+  {
+    "isbn": "9788845912955",
+    "title": "L'arte di essere felici",
+    "authors": [
+      "Arthur Schopenhauer"
+    ],
+    "publisher": "Adelphi",
+    "year": 1997,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845912955-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-15T21:55:16.837Z"
+  },
+  {
+    "isbn": "9788845917509",
+    "title": "In Patagonia",
+    "authors": [
+      "Bruce Chatwin"
+    ],
+    "publisher": "Adelphi",
+    "year": 2003,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=y-BIPgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-15T21:57:16.188Z"
+  },
+  {
+    "isbn": "9788845933974",
+    "title": "Come cambiare la tua mente",
+    "authors": [
+      "Michael Pollan"
+    ],
+    "publisher": "Adelphi",
+    "year": 2019,
+    "language": "Italiano",
+    "category": "Saggio",
+    "coverUrl": "http://books.google.com/books/content?id=HbmoxgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-15T21:58:20.454Z"
+  },
+  {
+    "isbn": "9788845907555",
+    "title": "Gödel, Escher, Bach",
+    "authors": [
+      "Adelphi"
+    ],
+    "publisher": "Adelphi",
+    "year": 1990,
+    "language": "Italiano",
+    "category": "Matematica",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845907555-L.jpg",
+    "status": "In lettura",
+    "addedAt": "2025-12-15T21:59:30.830Z"
+  },
+  {
+    "isbn": "9788845936081",
+    "title": "Relatività generale",
+    "authors": [
+      "Carlo Rovelli"
+    ],
+    "publisher": "Adelphi",
+    "year": 2021,
+    "language": "Italiano",
+    "category": "Fisica",
+    "coverUrl": "http://books.google.com/books/content?id=GxuKzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-15T22:00:18.272Z"
+  },
+  {
+    "isbn": "9788838948978",
+    "title": "Sotto mentite spoglie",
+    "authors": [
+      "Antonio Manzini"
+    ],
+    "publisher": "Sellerio editore Palermo",
+    "year": 2025,
+    "language": "Italiano",
+    "category": "Giallo",
+    "coverUrl": "http://books.google.com/books/content?id=HQ2r0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-15T22:02:36.517Z"
+  },
+  {
+    "isbn": "9788804801818",
+    "title": "Alzarsi all'alba",
+    "authors": [
+      "Mario Calabresi"
+    ],
+    "publisher": "Mondadori",
+    "year": 2025,
+    "language": "Italiano",
+    "category": "Giornalismo",
+    "coverUrl": "http://books.google.com/books/content?id=quaZ0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-15T22:03:18.270Z"
+  },
+  {
+    "isbn": "9788804778721",
+    "title": "I figli dell'odio. La radicalizzazione di Israele, la distruzione della Palestina, l'umiliazione dell'Iran",
+    "authors": [
+      "Cecilia Sala"
+    ],
+    "publisher": "Mondadori",
+    "year": 2025,
+    "language": "Italiano",
+    "category": "Attualità",
+    "coverUrl": "http://books.google.com/books/content?id=kqGV0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-15T22:03:55.330Z"
+  },
+  {
+    "isbn": "9788845909481",
+    "title": "Breve storia dell'infinito",
+    "authors": [
+      "Paolo Zellini"
+    ],
+    "publisher": "Adelphi",
+    "year": 1993,
+    "language": "Italiano",
+    "category": "Matematica",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845909481-L.jpg",
+    "status": "In lettura",
+    "addedAt": "2025-12-15T22:04:21.521Z"
+  },
+  {
+    "isbn": "9788830414822",
+    "title": "In Asia",
+    "authors": [
+      "Tiziano Terzani"
+    ],
+    "publisher": "Longanesi",
+    "year": 1998,
+    "language": "Italiano",
+    "category": "Viaggio",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788830414822-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-15T22:05:34.129Z"
+  },
+  {
+    "isbn": "9788845918421",
+    "title": "Cantico dei Cantici. Un amore di gioventù in quattro parti",
+    "authors": [
+      "Sholem Aleykhem"
+    ],
+    "publisher": "Adelphi",
+    "year": 2004,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=0b_9PAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-15T22:06:16.662Z"
+  },
+  {
+    "isbn": "9788845938429",
+    "title": "Gli altri",
+    "authors": [
+      "Georges Simenon"
+    ],
+    "publisher": "Adelphi",
+    "year": 2023,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=nq5W0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-15T22:06:50.760Z"
+  },
+  {
+    "isbn": "8780104671611",
+    "title": "Simposio. Apologia di Socrate. Critone. Fedone",
+    "authors": [
+      "Platone"
+    ],
+    "publisher": "Mondadori",
+    "year": 2023,
+    "language": "Italiano, testo greco a fronte",
+    "category": "Filosofia",
+    "status": "Non letto",
+    "addedAt": "2025-12-15T22:08:28.049Z"
+  },
+  {
+    "isbn": "0100815921351",
+    "title": "Musicofilia",
+    "authors": [
+      "Oliver Sacks"
+    ],
+    "publisher": "Adelphi",
+    "year": 2007,
+    "language": "Italiano",
+    "category": "Medicina",
+    "status": "In lettura",
+    "addedAt": "2025-12-15T22:09:54.829Z"
   }
 ]
