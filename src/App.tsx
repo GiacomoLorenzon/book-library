@@ -1,9 +1,11 @@
-import { useMemo, useState } from "react"
+import { useMemo, useState, type SyntheticEvent } from "react"
 import type { Book, ReadingStatus } from "./types"
 import booksSeed from "./data/books.json"
 import { fetchBookFromISBN } from "./services/isbn"
 import { getBooksFile, putBooksFile } from "./services/github"
 import { ISBNScanner } from "./components/ISBNScanner"
+
+const PLACEHOLDER_COVER = "/placeholder-cover.svg"
 
 /* =========================
    Utilities
@@ -23,6 +25,16 @@ function parseAuthors(s: string): string[] {
 function sameBook(a: Book, b: Book): boolean {
   if (a.isbn && b.isbn) return a.isbn === b.isbn
   return a.addedAt === b.addedAt
+}
+
+function coverWithFallback(url?: string): string {
+  return url?.trim() || PLACEHOLDER_COVER
+}
+
+function handleCoverError(e: SyntheticEvent<HTMLImageElement>) {
+  // Se la copertina remota non carica, passa al segnaposto e interrompe ulteriori errori.
+  if (e.currentTarget.src.endsWith(PLACEHOLDER_COVER)) return
+  e.currentTarget.src = PLACEHOLDER_COVER
 }
 
 /* =========================
@@ -440,6 +452,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
         {visibleBooks.map((b) => {
           const id = b.isbn ?? b.addedAt
           const isEditing = editingId === id
+          const coverSrc = coverWithFallback(b.coverUrl)
 
           return (
             <div
@@ -452,14 +465,11 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                 ========================= */
                 <div className="book-row">
                   <div className="book-cover">
-                    {b.coverUrl ? (
-                      <img
-                        src={b.coverUrl}
-                        alt={`Copertina di ${b.title}`}
-                      />
-                    ) : (
-                      <span className="book-cover-fallback"></span>
-                    )}
+                    <img
+                      src={coverSrc}
+                      alt={`Copertina di ${b.title}`}
+                      onError={handleCoverError}
+                    />
                   </div>
 
                   <div className="book-meta">
@@ -519,14 +529,11 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                 ========================= */
                 <div className="book-row">
                   <div className="book-cover">
-                    {editDraft!.coverUrl ? (
-                      <img
-                        src={editDraft!.coverUrl}
-                        alt={`Copertina di ${editDraft!.title}`}
-                      />
-                    ) : (
-                      <span className="book-cover-fallback"></span>
-                    )}
+                    <img
+                      src={coverWithFallback(editDraft!.coverUrl)}
+                      alt={`Copertina di ${editDraft!.title}`}
+                      onError={handleCoverError}
+                    />
                   </div>
 
                   <div className="book-meta book-meta-edit">
