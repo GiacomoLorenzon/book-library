@@ -122,7 +122,7 @@
     "language": "Italiano",
     "category": "Poesia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845924002-L.jpg",
-    "status": "Non letto",
+    "status": "In lettura",
     "addedAt": "2025-12-14T11:07:57.133Z"
   },
   {
@@ -150,7 +150,7 @@
     "language": "Francese",
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782070380596-L.jpg",
-    "status": "Non letto",
+    "status": "In lettura",
     "addedAt": "2025-12-14T12:41:00.268Z"
   },
   {
@@ -164,7 +164,7 @@
     "language": "Italiano",
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=F1y3oQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "status": "Non letto",
+    "status": "In lettura",
     "addedAt": "2025-12-14T12:41:50.351Z"
   },
   {
