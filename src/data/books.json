@@ -300,5 +300,61 @@
     "category": "Narrativa",
     "status": "Non letto",
     "addedAt": "2025-12-15T22:16:53.886Z"
+  },
+  {
+    "isbn": "9788845986390",
+    "title": "V13",
+    "authors": [
+      "Emmanuel Carrère"
+    ],
+    "publisher": "Adelphi Edizioni spa",
+    "year": 2023,
+    "language": "Italiano",
+    "category": "Cronaca",
+    "coverUrl": "http://books.google.com/books/content?id=u2WyEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2025-12-16T21:36:20.169Z"
+  },
+  {
+    "isbn": "9788804683223",
+    "title": "Cosa tiene accese le stelle",
+    "authors": [
+      "Mario Calabresi"
+    ],
+    "publisher": "Mondadori",
+    "year": 2017,
+    "language": "Italiano",
+    "category": "Cronaca",
+    "coverUrl": "http://books.google.com/books/content?id=BRxaswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2025-12-16T21:38:26.565Z"
+  },
+  {
+    "isbn": "9788835721673",
+    "title": "Una volta sola",
+    "authors": [
+      "Mario Calabresi"
+    ],
+    "publisher": "Edizioni Mondadori",
+    "year": 2022,
+    "language": "Italiano",
+    "category": "Cronaca",
+    "coverUrl": "http://books.google.com/books/content?id=zOKUEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2025-12-16T21:39:21.609Z"
+  },
+  {
+    "isbn": "9780063423534",
+    "title": "The Intelligent Investor Third Edition",
+    "authors": [
+      "Benjamin Graham"
+    ],
+    "publisher": "Harper Business",
+    "year": 2024,
+    "language": "Inglese",
+    "category": "Economia",
+    "coverUrl": "http://books.google.com/books/content?id=3_zi0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2025-12-16T21:42:22.252Z"
   }
 ]
