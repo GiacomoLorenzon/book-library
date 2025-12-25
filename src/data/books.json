@@ -356,5 +356,75 @@
     "coverUrl": "http://books.google.com/books/content?id=3_zi0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
     "addedAt": "2025-12-16T21:42:22.252Z"
+  },
+  {
+    "isbn": "9788804666639",
+    "title": "La solitudine dei numeri primi",
+    "authors": [
+      "Paolo Giordano"
+    ],
+    "publisher": "Mondadori",
+    "year": 2016,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804666639-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2025-12-25T08:58:10.762Z"
+  },
+  {
+    "isbn": "9788838948976",
+    "title": "Sotto mentite spoglie",
+    "authors": [
+      "Antonio Manzini"
+    ],
+    "publisher": "Sellerio editore Palermo",
+    "year": 2025,
+    "language": "Italiano",
+    "category": "Giallo",
+    "coverUrl": "http://books.google.com/books/content?id=HQ2r0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-25T08:59:40.685Z"
+  },
+  {
+    "isbn": "9788804801818",
+    "title": "Alzarsi all'alba",
+    "authors": [
+      "Mario Calabresi"
+    ],
+    "publisher": "Mondadori",
+    "year": 2025,
+    "language": "Italiano",
+    "category": "Giornalismo",
+    "coverUrl": "http://books.google.com/books/content?id=quaZ0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-25T09:00:25.799Z"
+  },
+  {
+    "isbn": "9788845933974",
+    "title": "Come cambiare la tua mente",
+    "authors": [
+      "Michael Pollan"
+    ],
+    "publisher": "Adelphi",
+    "year": 2019,
+    "language": "Italiano",
+    "category": "Medicina",
+    "coverUrl": "http://books.google.com/books/content?id=HbmoxgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2025-12-25T09:01:05.584Z"
+  },
+  {
+    "isbn": "9788806219222",
+    "title": "Armi, acciaio e malattie",
+    "authors": [
+      "Jared Diamond"
+    ],
+    "publisher": "Einaudi",
+    "year": 2014,
+    "language": "Italiano",
+    "category": "Antropologia",
+    "coverUrl": "http://books.google.com/books/content?id=nBa-ngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2025-12-25T09:02:06.759Z"
   }
 ]
