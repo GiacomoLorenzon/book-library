@@ -426,5 +426,158 @@
     "coverUrl": "http://books.google.com/books/content?id=nBa-ngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
     "addedAt": "2025-12-25T09:02:06.759Z"
+  },
+  {
+    "isbn": "9788845925023",
+    "title": "Un giorno questo dolore ti sarà utile",
+    "authors": [
+      "Peter Cameron"
+    ],
+    "publisher": "Adelphi",
+    "year": 2010,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845925023-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-01-06T18:37:32.037Z"
+  },
+  {
+    "isbn": "9788817179348",
+    "title": "In un volo di storni. Le meraviglie dei sistemi complessi",
+    "authors": [
+      "Giorgio Parisi"
+    ],
+    "publisher": "BUR Rizzoli",
+    "year": 2023,
+    "language": "Italiano",
+    "category": "Fisica",
+    "coverUrl": "http://books.google.com/books/content?id=RjUF0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2026-01-06T18:39:06.228Z"
+  },
+  {
+    "isbn": "9788832850659",
+    "title": "La bellezza come metodo",
+    "authors": [
+      "Paul A. Dirac"
+    ],
+    "publisher": "Raffaello Cortina Editore",
+    "year": 2019,
+    "language": "Italiano",
+    "category": "Fisica",
+    "coverUrl": "http://books.google.com/books/content?id=88YPwQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2026-01-06T18:39:56.098Z"
+  },
+  {
+    "isbn": "9788866324782",
+    "title": "L'eleganza del riccio",
+    "authors": [
+      "Muriel Barbery"
+    ],
+    "publisher": "Edizioni e/o",
+    "year": 2014,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=QsaFoAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-01-06T18:40:46.745Z"
+  },
+  {
+    "isbn": "9788806246907",
+    "title": "E se smettessimo di fingere?",
+    "authors": [
+      "Jonathan Franzen"
+    ],
+    "publisher": "Giulio Einaudi Editore",
+    "year": 2019,
+    "language": "Italiano",
+    "category": "Scienza",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806246907-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-01-06T18:42:13.391Z"
+  },
+  {
+    "isbn": "9788834010839",
+    "title": "La pace è ogni passo",
+    "authors": [
+      "Thich Nhat Hanh"
+    ],
+    "publisher": "Ubaldini Editore",
+    "year": 1993,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "http://books.google.com/books/content?id=zb0hAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2026-01-06T18:43:19.222Z"
+  },
+  {
+    "isbn": "9788838933529",
+    "title": "Il divano di Istanbul",
+    "authors": [
+      "Alessandro Barbero"
+    ],
+    "publisher": "Sellerio editore Palermo",
+    "year": 2015,
+    "language": "Italiano",
+    "category": "Storia",
+    "coverUrl": "http://books.google.com/books/content?id=ovJLrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-01-06T18:44:56.249Z"
+  },
+  {
+    "isbn": "9788845917721",
+    "title": "L'arte di conoscere se stessi",
+    "authors": [
+      "Arthur Schopenhauer"
+    ],
+    "publisher": "Adelphi",
+    "year": 2003,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845917721-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-01-06T18:46:09.934Z"
+  },
+  {
+    "isbn": "0700835930250",
+    "title": "Gratitudine",
+    "authors": [
+      "Oliver Sacks"
+    ],
+    "publisher": "Adelphi",
+    "year": 2016,
+    "language": "Italiano",
+    "category": "Medicina",
+    "status": "Letto",
+    "addedAt": "2026-01-06T18:47:27.260Z"
+  },
+  {
+    "isbn": "9788845931925",
+    "title": "L'ordine del tempo",
+    "authors": [
+      "Carlo Rovelli"
+    ],
+    "publisher": "Adelphi",
+    "year": 2017,
+    "language": "Italiano",
+    "category": "Fisica",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845931925-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-01-06T18:48:32.297Z"
+  },
+  {
+    "isbn": "9788845938306",
+    "title": "L'America in automobile",
+    "authors": [
+      "Georges Simenon"
+    ],
+    "publisher": "Adelphi",
+    "year": 2023,
+    "language": "Italiano",
+    "category": "Viaggio",
+    "coverUrl": "http://books.google.com/books/content?id=PRVa0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2026-01-06T18:49:07.986Z"
   }
 ]
