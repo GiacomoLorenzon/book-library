@@ -579,5 +579,47 @@
     "coverUrl": "http://books.google.com/books/content?id=PRVa0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
     "addedAt": "2026-01-06T18:49:07.986Z"
+  },
+  {
+    "isbn": "9788806258658",
+    "title": "De rerum natura",
+    "authors": [
+      "Tito Lucrezio Caro"
+    ],
+    "publisher": "Einaudi",
+    "year": 2023,
+    "language": "Latino a fronte",
+    "category": "Filosofia",
+    "coverUrl": "http://books.google.com/books/content?id=8P7DzwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2026-01-07T11:52:41.295Z"
+  },
+  {
+    "isbn": "9788845919480",
+    "title": "Anatomia dell'irrequietezza",
+    "authors": [
+      "Bruce Chatwin"
+    ],
+    "publisher": "Adelphi",
+    "year": 2005,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=QYB-PQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Non letto",
+    "addedAt": "2026-01-07T11:53:34.541Z"
+  },
+  {
+    "isbn": "9781400062560",
+    "title": "Deep Simplicity",
+    "authors": [
+      "John R. Gribbin"
+    ],
+    "publisher": "Random House",
+    "year": 2005,
+    "language": "Inglese",
+    "category": "Fisica",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400062560-L.jpg",
+    "status": "In lettura",
+    "addedAt": "2026-01-07T11:54:19.186Z"
   }
 ]
