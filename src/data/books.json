@@ -621,5 +621,157 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400062560-L.jpg",
     "status": "In lettura",
     "addedAt": "2026-01-07T11:54:19.186Z"
+  },
+  {
+    "isbn": "9788845908927",
+    "title": "Oltre il linguaggio",
+    "authors": [
+      "Emanuele Severino"
+    ],
+    "publisher": "Adelphi",
+    "year": 1992,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "In lettura",
+    "addedAt": "2026-01-16T17:54:44.261Z"
+  },
+  {
+    "isbn": "0791875927522",
+    "title": "Suite francese",
+    "authors": [
+      "Irène Némirovsky"
+    ],
+    "publisher": "Adelphi",
+    "year": 2005,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "status": "In lettura",
+    "addedAt": "2026-01-16T17:56:37.496Z"
+  },
+  {
+    "isbn": "9788807881749",
+    "title": "Il ponte della Ghisolfa",
+    "authors": [
+      "Giovanni Testori"
+    ],
+    "publisher": "Feltrinelli",
+    "year": 2013,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=FO9cmQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2026-01-16T17:57:50.351Z"
+  },
+  {
+    "isbn": "9788845934773",
+    "title": "Racconti brevi e straordinari",
+    "authors": [
+      "Jorge Luis Borges",
+      "Adolfo Bioy Casares"
+    ],
+    "publisher": "Adelphi",
+    "year": 2020,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=Qh6ezQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "In lettura",
+    "addedAt": "2026-01-16T17:58:25.627Z"
+  },
+  {
+    "isbn": "9788804668022",
+    "title": "Le citta invisibili",
+    "authors": [
+      "Italo Calvino"
+    ],
+    "publisher": "Mondadori",
+    "year": 2016,
+    "language": "Italiano",
+    "category": "Classici",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804668022-L.jpg",
+    "status": "In lettura",
+    "addedAt": "2026-01-16T17:58:56.792Z"
+  },
+  {
+    "isbn": "9788804734697",
+    "title": "Let them talk",
+    "authors": [
+      "Cesare Cremonini"
+    ],
+    "publisher": "Mondadori",
+    "year": 2020,
+    "language": "Italiano",
+    "category": "Biografia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804734697-L.jpg",
+    "status": "In lettura",
+    "addedAt": "2026-01-16T17:59:37.912Z"
+  },
+  {
+    "isbn": "9788245971477",
+    "title": "Risvegli",
+    "authors": [
+      "Oliver Sacks"
+    ],
+    "publisher": "Adelphi",
+    "year": 1987,
+    "language": "Italiano",
+    "category": "Medicina",
+    "status": "Letto",
+    "addedAt": "2026-01-16T18:01:50.617Z"
+  },
+  {
+    "isbn": "9788817120715",
+    "title": "Adelchi",
+    "authors": [
+      "Alessandro Manzoni"
+    ],
+    "publisher": "Bur",
+    "year": 1976,
+    "language": "Italiano",
+    "category": "Classici",
+    "coverUrl": "http://books.google.com/books/content?id=I9pLAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-01-16T18:03:04.305Z"
+  },
+  {
+    "isbn": "9788807902833",
+    "title": "Manuale",
+    "authors": [
+      "Epitteto"
+    ],
+    "publisher": "Feltrinelli",
+    "year": 2017,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "http://books.google.com/books/content?id=qmRHswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-01-16T18:03:38.684Z"
+  },
+  {
+    "isbn": "9788845937880",
+    "title": "Che cosa fa la gente tutto il giorno?",
+    "authors": [
+      "Peter Cameron"
+    ],
+    "publisher": "Adelphi",
+    "year": 2023,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=vprtzwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-01-16T18:04:20.566Z"
+  },
+  {
+    "isbn": "9788857506937",
+    "title": "Del bello",
+    "authors": [
+      "Emanuele Severino"
+    ],
+    "publisher": "Mimesis",
+    "year": 2011,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "http://books.google.com/books/content?id=3gZjXwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-01-16T18:05:40.990Z"
   }
 ]
