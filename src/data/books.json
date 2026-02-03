@@ -787,5 +787,61 @@
     "coverUrl": "http://books.google.com/books/content?id=LU8LQ4B64iEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "status": "Da acquistare",
     "addedAt": "2026-02-03T16:41:24.852Z"
+  },
+  {
+    "isbn": "9788804736127",
+    "title": "Pensieri lenti e veloci",
+    "authors": [
+      "Daniel Kahneman"
+    ],
+    "publisher": "Mondadori",
+    "year": 2020,
+    "language": "Italiano",
+    "category": "Economia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804736127-L.jpg",
+    "status": "Da acquistare",
+    "addedAt": "2026-02-03T16:42:54.172Z"
+  },
+  {
+    "isbn": "9788817077248",
+    "title": "Il gabbiano Jonathan Livingston",
+    "authors": [
+      "Richard Bach"
+    ],
+    "publisher": "BUR",
+    "year": 2014,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=xqivoQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Da acquistare",
+    "addedAt": "2026-02-03T16:43:53.847Z"
+  },
+  {
+    "isbn": "9788845935657",
+    "title": "Conversazione su Dante",
+    "authors": [
+      "Osip Mandel'stam"
+    ],
+    "publisher": "Adelphi",
+    "year": 2021,
+    "language": "Italiano",
+    "category": "Letteratura",
+    "coverUrl": "http://books.google.com/books/content?id=QUt0zgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-02-03T16:44:40.046Z"
+  },
+  {
+    "isbn": "9788870636963",
+    "title": "Temperamento. Storia di un enigma musicale",
+    "authors": [
+      "Stuart Isacoff"
+    ],
+    "publisher": "EDT srl",
+    "year": 2005,
+    "language": "Italiano",
+    "category": "Musica",
+    "coverUrl": "http://books.google.com/books/content?id=kYaQPBSl86QC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-02-03T16:45:46.300Z"
   }
 ]
