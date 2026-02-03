@@ -775,60 +775,18 @@
     "addedAt": "2026-01-16T18:05:40.990Z"
   },
   {
-    "isbn": "9788852016998",
-    "title": "Treno di notte per Lisbona",
-    "authors": [
-      "Pascal Mercier"
-    ],
-    "publisher": "Mondadori",
-    "year": 2010,
-    "language": "Italiano",
-    "category": "Narrativa",
-    "coverUrl": "http://books.google.com/books/content?id=LU8LQ4B64iEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    "status": "Da acquistare",
-    "addedAt": "2026-02-03T16:41:24.852Z"
-  },
-  {
-    "isbn": "9788804736127",
-    "title": "Pensieri lenti e veloci",
-    "authors": [
-      "Daniel Kahneman"
-    ],
-    "publisher": "Mondadori",
-    "year": 2020,
-    "language": "Italiano",
-    "category": "Economia",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804736127-L.jpg",
-    "status": "Da acquistare",
-    "addedAt": "2026-02-03T16:42:54.172Z"
-  },
-  {
-    "isbn": "9788817077248",
+    "isbn": "9788817061155",
     "title": "Il gabbiano Jonathan Livingston",
     "authors": [
       "Richard Bach"
     ],
     "publisher": "BUR",
-    "year": 2014,
+    "year": 2012,
     "language": "Italiano",
     "category": "Narrativa",
-    "coverUrl": "http://books.google.com/books/content?id=xqivoQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "coverUrl": "http://books.google.com/books/content?id=4QKOMgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Da acquistare",
-    "addedAt": "2026-02-03T16:43:53.847Z"
-  },
-  {
-    "isbn": "9788845935657",
-    "title": "Conversazione su Dante",
-    "authors": [
-      "Osip Mandel'stam"
-    ],
-    "publisher": "Adelphi",
-    "year": 2021,
-    "language": "Italiano",
-    "category": "Letteratura",
-    "coverUrl": "http://books.google.com/books/content?id=QUt0zgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "status": "Letto",
-    "addedAt": "2026-02-03T16:44:40.046Z"
+    "addedAt": "2026-02-03T16:12:44.766Z"
   },
   {
     "isbn": "9788870636963",
@@ -842,6 +800,76 @@
     "category": "Musica",
     "coverUrl": "http://books.google.com/books/content?id=kYaQPBSl86QC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-02-03T16:45:46.300Z"
+    "addedAt": "2026-02-03T16:14:56.684Z"
+  },
+  {
+    "isbn": "9788845916250",
+    "title": "L'uomo che scambiò sua moglie per un cappello",
+    "authors": [
+      "Oliver Sacks"
+    ],
+    "publisher": "Adelphi",
+    "year": 2001,
+    "language": "Italiano",
+    "category": "Medicina",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845916250-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-02-03T16:16:53.983Z"
+  },
+  {
+    "isbn": "9788845935657",
+    "title": "Conversazione su Dante",
+    "authors": [
+      "Osip Mandel'stam"
+    ],
+    "publisher": "Adelphi",
+    "year": 2021,
+    "language": "Italiano",
+    "category": "Letteratura",
+    "coverUrl": "http://books.google.com/books/content?id=QUt0zgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-02-03T16:18:55.176Z"
+  },
+  {
+    "isbn": "9788804736127",
+    "title": "Pensieri lenti e veloci",
+    "authors": [
+      "Daniel Kahneman"
+    ],
+    "publisher": "Mondadori",
+    "year": 2020,
+    "language": "Italiano",
+    "category": "Economia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804736127-L.jpg",
+    "status": "Da acquistare",
+    "addedAt": "2026-02-03T16:30:29.372Z"
+  },
+  {
+    "isbn": "9788804734451",
+    "title": "Il vecchio e il mare. Nuova ediz.",
+    "authors": [
+      "Ernest Hemingway"
+    ],
+    "publisher": "Mondadori",
+    "year": 2021,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "http://books.google.com/books/content?id=3x5zzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-02-03T16:31:51.745Z"
+  },
+  {
+    "isbn": "9788845902161",
+    "title": "L'uomo che scambiò sua moglie per un cappello",
+    "authors": [
+      "Oliver Sacks"
+    ],
+    "publisher": "Adelphi",
+    "year": 1986,
+    "language": "Italiano",
+    "category": "Medicina",
+    "coverUrl": "http://books.google.com/books/content?id=VWDMAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    "status": "Letto",
+    "addedAt": "2026-02-03T16:48:04.796Z"
   }
 ]
