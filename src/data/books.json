@@ -692,20 +692,6 @@
     "addedAt": "2026-01-16T17:58:56.792Z"
   },
   {
-    "isbn": "9788804734697",
-    "title": "Let them talk",
-    "authors": [
-      "Cesare Cremonini"
-    ],
-    "publisher": "Mondadori",
-    "year": 2020,
-    "language": "Italiano",
-    "category": "Biografia",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804734697-L.jpg",
-    "status": "In lettura",
-    "addedAt": "2026-01-16T17:59:37.912Z"
-  },
-  {
     "isbn": "9788245971477",
     "title": "Risvegli",
     "authors": [
@@ -871,5 +857,17 @@
     "coverUrl": "http://books.google.com/books/content?id=VWDMAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
     "addedAt": "2026-02-03T16:48:04.796Z"
+  },
+  {
+    "title": "Let them talk",
+    "authors": [
+      "Cesare Cremonini"
+    ],
+    "publisher": "Mondadori",
+    "year": 2020,
+    "language": "Italiano",
+    "category": "Biografia",
+    "status": "In lettura",
+    "addedAt": "2026-02-03T23:52:29.219Z"
   }
 ]
