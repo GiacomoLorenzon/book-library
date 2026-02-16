@@ -869,5 +869,47 @@
     "category": "Biografia",
     "status": "In lettura",
     "addedAt": "2026-02-03T23:52:29.219Z"
+  },
+  {
+    "isbn": "9783836527835",
+    "title": "Chagall",
+    "authors": [
+      "Rainer Metzge"
+    ],
+    "publisher": "TASCHEN",
+    "year": 2018,
+    "language": "English",
+    "category": "Arte",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9783836527835-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-02-16T18:40:35.248Z"
+  },
+  {
+    "isbn": "9783836532235",
+    "title": "Gauguin",
+    "authors": [
+      "Ingo F. Walther"
+    ],
+    "publisher": "TASCHEN",
+    "year": 2017,
+    "language": "Inglese",
+    "category": "Arte",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9783836532235-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-02-16T18:46:49.681Z"
+  },
+  {
+    "isbn": "9783836504256",
+    "title": "Rothko",
+    "authors": [
+      "Jacob Baal-Teshuva"
+    ],
+    "publisher": "TASCHEN",
+    "year": 2015,
+    "language": "Francese",
+    "category": "Arte",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9783836504256-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-02-16T18:47:44.276Z"
   }
 ]
