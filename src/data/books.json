@@ -925,5 +925,19 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845908927-L.jpg",
     "status": "In lettura",
     "addedAt": "2026-04-10T19:05:45.523Z"
+  },
+  {
+    "isbn": "9788815019806",
+    "title": "Allegro ma non troppo",
+    "authors": [
+      "Carlo Maria Cipolla"
+    ],
+    "publisher": "Il Mulino",
+    "year": 1988,
+    "language": "Italiano",
+    "category": "Saggi",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788815019806-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-07-26T10:16:14.679Z"
   }
 ]
