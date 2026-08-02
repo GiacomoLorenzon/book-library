@@ -939,5 +939,340 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788815019806-L.jpg",
     "status": "Letto",
     "addedAt": "2026-07-26T10:16:14.679Z"
+  },
+  {
+    "isbn": "9781603866163",
+    "title": "A Dynamical Theory of the Electromagnetic Field",
+    "authors": [
+      "James Clerk Maxwell"
+    ],
+    "publisher": "Rough Draft Printing",
+    "year": 2013,
+    "language": "Inglese",
+    "category": "Scienze",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781603866163-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:05:39.336Z"
+  },
+  {
+    "isbn": "6188105927850",
+    "title": "Il bosone di Higgs",
+    "authors": [
+      "Jim Baggott"
+    ],
+    "publisher": "Adelphi",
+    "year": 2012,
+    "language": "Italiano",
+    "category": "Scienze",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:07:35.789Z"
+  },
+  {
+    "isbn": "9788860617538",
+    "title": "Così parlano le stelle",
+    "authors": [
+      "Margherita Hack",
+      "Eda Gjergo"
+    ],
+    "publisher": "Sperling",
+    "year": 2009,
+    "language": "Italiano",
+    "category": "Scienze",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:09:31.039Z"
+  },
+  {
+    "isbn": "9788817079754",
+    "title": "Dal big bang ai buchi neri",
+    "authors": [
+      "Stephen W. Hawking"
+    ],
+    "publisher": "Bur",
+    "year": 2015,
+    "language": "Italiano",
+    "category": "Scienze",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788817079754-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:10:15.045Z"
+  },
+  {
+    "isbn": "9788815274236",
+    "title": "Geometrie senza limiti",
+    "authors": [
+      "Laura Catastini",
+      "Franco Ghione"
+    ],
+    "publisher": "Il mulino",
+    "year": 2018,
+    "language": "Italiani",
+    "category": "Scienze",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:11:22.394Z"
+  },
+  {
+    "isbn": "9788845929250",
+    "title": "Sette brevi lezioni di fisica",
+    "authors": [
+      "Carlo Rovelli"
+    ],
+    "publisher": "Adelphi",
+    "year": 2014,
+    "language": "Italiano",
+    "category": "Scienze",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845929250-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:12:21.234Z"
+  },
+  {
+    "isbn": "9788809771420",
+    "title": "La fisica fuori casa",
+    "authors": [
+      "Emiliano Ricci"
+    ],
+    "publisher": "Giunti",
+    "year": 2013,
+    "language": "Italiano",
+    "category": "Scienze",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:13:43.874Z"
+  },
+  {
+    "isbn": "9788808098771",
+    "title": "Problemi di fisica della Scuola Normale",
+    "authors": [
+      "Franco Bassani"
+    ],
+    "publisher": "Zanichelli",
+    "year": 2000,
+    "language": "Italiano",
+    "category": "Scienze",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:15:42.730Z"
+  },
+  {
+    "isbn": "9771824874351",
+    "title": "L’economia spiegata ai ragazzi",
+    "authors": [
+      "Claudia Galimberti"
+    ],
+    "publisher": "Il sole 24 ore",
+    "year": 2012,
+    "language": "Italiano",
+    "category": "Economia",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:17:53.231Z"
+  },
+  {
+    "isbn": "9788845918711",
+    "title": "La scomparsa di Majorana",
+    "authors": [
+      "Leonardo Sciascia"
+    ],
+    "publisher": "Adelphi",
+    "year": 2020,
+    "language": "Italiano",
+    "category": "Scienze",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:19:05.620Z"
+  },
+  {
+    "isbn": "9788808008244",
+    "title": "Trent’anni che sconvolsero la fisica",
+    "authors": [
+      "George Gamow"
+    ],
+    "publisher": "Zanichelli",
+    "year": 1966,
+    "language": "Italiano",
+    "category": "Scienze",
+    "status": "In lettura",
+    "addedAt": "2026-08-02T13:21:21.028Z"
+  },
+  {
+    "isbn": "9788857555195",
+    "title": "La speranza oggi",
+    "authors": [
+      "Jean-Paul Sartre"
+    ],
+    "publisher": "Mimesis",
+    "year": 2019,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:22:44.217Z"
+  },
+  {
+    "isbn": "9788844047849",
+    "title": "Diario del seduttore",
+    "authors": [
+      "Søren Kierkegaard"
+    ],
+    "publisher": "Demetra",
+    "year": 1843,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:24:29.614Z"
+  },
+  {
+    "isbn": "9788833924861",
+    "title": "La bellezza",
+    "authors": [
+      "Stefano Zecchi"
+    ],
+    "publisher": "Bollati Boringhieri",
+    "year": 1990,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:26:07.454Z"
+  },
+  {
+    "isbn": "9788845901843",
+    "title": "Siddharta",
+    "authors": [
+      "Hermann Hesse"
+    ],
+    "publisher": "Adelphi",
+    "year": 1922,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845901843-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:27:09.438Z"
+  },
+  {
+    "isbn": "9788863572681",
+    "title": "Elogio della mitezza",
+    "authors": [
+      "Norberto Bobbio"
+    ],
+    "publisher": "Edizioni dell’asino",
+    "year": 2018,
+    "language": "Italiano",
+    "category": "Saggi",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:28:14.531Z"
+  },
+  {
+    "isbn": "9788845905889",
+    "title": "Genealogia della morale",
+    "authors": [
+      "Friederich Noetzsche"
+    ],
+    "publisher": "Adelphi",
+    "year": 2018,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:30:05.513Z"
+  },
+  {
+    "isbn": "9788845901997",
+    "title": "La nascita della tragedia",
+    "authors": [
+      "Friedrich Nietzsche"
+    ],
+    "publisher": "Adelphi",
+    "year": 1978,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845901997-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:30:31.723Z"
+  },
+  {
+    "isbn": "9788845903908",
+    "title": "Umano, troppo umano",
+    "authors": [
+      "Friedrich Nietzsche"
+    ],
+    "publisher": "Adelphi",
+    "year": 1979,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845903908-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:30:53.104Z"
+  },
+  {
+    "isbn": "9788806219505",
+    "title": "Il sistema periodico",
+    "authors": [
+      "Primo Levi"
+    ],
+    "publisher": "Einaudi",
+    "year": 2014,
+    "language": "Italiano",
+    "category": "Scienze",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806219505-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:32:02.349Z"
+  },
+  {
+    "isbn": "9788833921983",
+    "title": "Cinque conferenze sulla psicoanalisi",
+    "authors": [
+      "Sigmund Freud"
+    ],
+    "publisher": "Bollati Boringhieri",
+    "year": 2011,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:33:31.478Z"
+  },
+  {
+    "isbn": "9788817106399",
+    "title": "Per la pace perpetua",
+    "authors": [
+      "Immanuel Kant"
+    ],
+    "publisher": "Bur",
+    "year": 2003,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788817106399-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:35:05.957Z"
+  },
+  {
+    "isbn": "0700837545049",
+    "title": "Logos e techne",
+    "authors": [
+      "Marco Ferrari"
+    ],
+    "publisher": "Mimesis",
+    "year": 2017,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "Letto",
+    "addedAt": "2026-08-02T13:36:20.808Z"
+  },
+  {
+    "isbn": "9788806203924",
+    "title": "Logica della scoperta scientifica",
+    "authors": [
+      "Karl R. Popper"
+    ],
+    "publisher": "Einaudi",
+    "year": 1934,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "In lettura",
+    "addedAt": "2026-08-02T13:37:29.863Z"
+  },
+  {
+    "isbn": "9788845272387",
+    "title": "Missione del dotto",
+    "authors": [
+      "Johann G. Fitche"
+    ],
+    "publisher": "Bompiani",
+    "year": 2013,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "Non letto",
+    "addedAt": "2026-08-02T13:38:55.525Z"
   }
 ]
