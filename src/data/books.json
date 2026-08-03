@@ -1274,5 +1274,19 @@
     "category": "Filosofia",
     "status": "Non letto",
     "addedAt": "2026-08-02T13:38:55.525Z"
+  },
+  {
+    "isbn": "9780486653556",
+    "title": "Fifty challenging problems in probability with solutions",
+    "authors": [
+      "Frederick Mosteller"
+    ],
+    "publisher": "Dover Publications",
+    "year": 1987,
+    "language": "Inglese",
+    "category": "Scienze",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486653556-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-08-03T11:14:17.040Z"
   }
 ]
