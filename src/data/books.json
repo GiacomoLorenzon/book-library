@@ -1288,5 +1288,33 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486653556-L.jpg",
     "status": "Letto",
     "addedAt": "2026-08-03T11:14:17.040Z"
+  },
+  {
+    "isbn": "9788806221935",
+    "title": "Le notti bianche",
+    "authors": [
+      "Fëdor Dostoevskij"
+    ],
+    "publisher": "Einaudi",
+    "year": 2014,
+    "language": "Italiano (testo a fronte)",
+    "category": "Classici",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806221935-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-08-18T17:16:03.525Z"
+  },
+  {
+    "isbn": "9781735028804",
+    "title": "A Practical Guide To Quantitative Finance Interviews",
+    "authors": [
+      "Xinfeng Zhou"
+    ],
+    "publisher": "Xinfeng Zhou",
+    "year": 2020,
+    "language": "Inglese",
+    "category": "Finanza",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781735028804-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-08-18T17:18:14.584Z"
   }
 ]
