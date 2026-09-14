@@ -1316,5 +1316,192 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781735028804-L.jpg",
     "status": "Letto",
     "addedAt": "2026-08-18T17:18:14.584Z"
+  },
+  {
+    "isbn": "9788833923123",
+    "title": "La fisica del diavolo. Maxwell, Schrodinger, Einstein e i paraossi",
+    "authors": [
+      "Jim Al-Khalili"
+    ],
+    "publisher": "Bollati Boringhieri",
+    "year": 2012,
+    "language": "Italiano",
+    "category": "Scienze",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788833923123-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:19:55.619Z"
+  },
+  {
+    "isbn": "9788807881640",
+    "title": "La vita agra",
+    "authors": [
+      "Luciano Bianciardi"
+    ],
+    "publisher": "Feltrinelli",
+    "year": 2013,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:21:35.676Z"
+  },
+  {
+    "isbn": "9788806243685",
+    "title": "Senza mai arrivare in cima",
+    "authors": [
+      "Paolo Cognetti"
+    ],
+    "publisher": "Einaudi",
+    "year": 2018,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806243685-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:22:48.749Z"
+  },
+  {
+    "isbn": "9788845934506",
+    "title": "Storia universale dell’infamia",
+    "authors": [
+      "Jorge Luis Borges"
+    ],
+    "publisher": "Adelphi",
+    "year": 1995,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:24:36.429Z"
+  },
+  {
+    "isbn": "9788845925344",
+    "title": "QED",
+    "authors": [
+      "Richard P. Feynman"
+    ],
+    "publisher": "Adelphi",
+    "year": 2010,
+    "language": "Italiano",
+    "category": "Scienze",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845925344-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:25:48.843Z"
+  },
+  {
+    "isbn": "9782753527430",
+    "title": "La Babel étudiante",
+    "authors": [
+      "Dzovinar Kévonian"
+    ],
+    "publisher": "Presses universitaires de Rennes",
+    "year": 2013,
+    "language": "Francese",
+    "category": "Saggi",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9782753527430-L.jpg",
+    "status": "In lettura",
+    "addedAt": "2026-09-14T07:27:40.303Z"
+  },
+  {
+    "isbn": "9788834011614",
+    "title": "Il diamante che recide l’illusione",
+    "authors": [
+      "Thich Nhat Hanh"
+    ],
+    "publisher": "Ubaldini Editore",
+    "year": 1992,
+    "language": "Italiano",
+    "category": "Filosofia",
+    "status": "In lettura",
+    "addedAt": "2026-09-14T07:29:32.002Z"
+  },
+  {
+    "isbn": "9782361955199",
+    "title": "Paris méconnu",
+    "authors": [
+      "Thomas Jonglesz"
+    ],
+    "publisher": "Éditions Jonglez",
+    "year": 2021,
+    "language": "Francese",
+    "category": "Guide",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9782361955199-L.jpg",
+    "status": "Letto",
+    "addedAt": "2026-09-14T07:30:39.347Z"
+  },
+  {
+    "isbn": "9789899095090",
+    "title": "Animal Farm",
+    "authors": [
+      "George Orwell"
+    ],
+    "publisher": "Livraria Lello",
+    "year": 2022,
+    "language": "Inglese",
+    "category": "Classici",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:33:12.015Z"
+  },
+  {
+    "isbn": "9782072923470",
+    "title": "Le pays des autres",
+    "authors": [
+      "Leïla Slimani"
+    ],
+    "publisher": "folio",
+    "year": 2021,
+    "language": "Francese",
+    "category": "Saggi",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9782072923470-L.jpg",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:34:03.492Z"
+  },
+  {
+    "isbn": "9788807903847",
+    "title": "Dialoghi con Leucò",
+    "authors": [
+      "Cesare Pavese"
+    ],
+    "publisher": "Feltrinelli",
+    "year": 2021,
+    "language": "Italiano",
+    "category": "Classici",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:35:34.953Z"
+  },
+  {
+    "isbn": "9788833934013",
+    "title": "QED",
+    "authors": [
+      "Gabriele Lolli"
+    ],
+    "publisher": "Bollati Boringhieri",
+    "year": 2005,
+    "language": "Italiano",
+    "category": "Matematica",
+    "status": "In lettura",
+    "addedAt": "2026-09-14T07:36:44.052Z"
+  },
+  {
+    "isbn": "9781278013947",
+    "title": "Disquisitiones Arithmeticae",
+    "authors": [
+      "Caro Friederich Gauss"
+    ],
+    "year": 1801,
+    "language": "Latino",
+    "category": "Matematica",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:43:15.235Z"
+  },
+  {
+    "isbn": "9788807881060",
+    "title": "Autostop con Buddah",
+    "authors": [
+      "Will Ferguson"
+    ],
+    "publisher": "Feltrinelli",
+    "year": 1998,
+    "language": "Italiano",
+    "category": "Narrativa",
+    "status": "Non letto",
+    "addedAt": "2026-09-14T07:46:38.429Z"
   }
 ]
