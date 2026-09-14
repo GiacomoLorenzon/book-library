@@ -1,4 +1,4 @@
-# Personal Book Library
+# Personal Library
 
 A personal, static web application to catalogue books, hosted on **GitHub Pages**, with **persistent editing via GitHub commits** and **automatic metadata retrieval from ISBN**.
 

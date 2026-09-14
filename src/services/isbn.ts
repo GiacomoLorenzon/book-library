@@ -1,5 +1,27 @@
 import type { Book } from "../types"
 
+type OpenLibraryAuthorRef = { key?: string }
+type OpenLibraryBook = {
+  title?: string
+  authors?: OpenLibraryAuthorRef[]
+  publishers?: string[]
+  publish_date?: string
+  languages?: { key?: string }[]
+}
+
+type GoogleVolumeInfo = {
+  title?: string
+  authors?: string[]
+  publisher?: string
+  publishedDate?: string
+  language?: string
+  imageLinks?: { thumbnail?: string }
+}
+
+type GoogleBooksResponse = {
+  items?: { volumeInfo?: GoogleVolumeInfo }[]
+}
+
 function normaliseIsbn(isbn: string): string {
   return isbn.replace(/[^0-9Xx]/g, "").toUpperCase()
 }
@@ -10,18 +32,18 @@ export async function fetchBookFromISBN(isbnInput: string): Promise<Book> {
   // 1) Open Library
   const ol = await fetch(`https://openlibrary.org/isbn/${isbn}.json`)
   if (ol.ok) {
-    const raw = await ol.json()
+    const raw = await ol.json() as OpenLibraryBook
 
     // authors: OpenLibrary spesso dà solo chiavi; proviamo a risolverle, ma senza complicare troppo
     let authors: string[] = []
     if (Array.isArray(raw.authors) && raw.authors.length > 0) {
       const names = await Promise.all(
-        raw.authors.map(async (a: any) => {
+        raw.authors.map(async (a) => {
           if (!a?.key) return null
           const r = await fetch(`https://openlibrary.org${a.key}.json`)
           if (!r.ok) return null
-          const ar = await r.json()
-          return ar?.name ?? null
+          const ar = await r.json() as { name?: string }
+          return ar.name ?? null
         })
       )
       authors = names.filter(Boolean) as string[]
@@ -51,7 +73,7 @@ export async function fetchBookFromISBN(isbnInput: string): Promise<Book> {
     `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`
   )
   if (gb.ok) {
-    const raw = await gb.json()
+    const raw = await gb.json() as GoogleBooksResponse
     const item = raw.items?.[0]?.volumeInfo
     if (item) {
       const year = item.publishedDate ? parseInt(String(item.publishedDate).slice(0, 4), 10) : undefined

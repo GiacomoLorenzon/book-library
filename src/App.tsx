@@ -1,9 +1,14 @@
-import { useMemo, useState, type SyntheticEvent } from "react"
+import { lazy, Suspense, useMemo, useState, type SyntheticEvent } from "react"
 import type { Book, ReadingStatus } from "./types"
 import booksSeed from "./data/books.json"
 import { fetchBookFromISBN } from "./services/isbn"
 import { getBooksFile, putBooksFile } from "./services/github"
-import { ISBNScanner } from "./components/ISBNScanner"
+
+const ISBNScanner = lazy(() =>
+  import("./components/ISBNScanner").then((module) => ({
+    default: module.ISBNScanner,
+  }))
+)
 
 const PLACEHOLDER_COVER = `${import.meta.env.BASE_URL}placeholder-cover.svg`
 
@@ -13,6 +18,10 @@ const PLACEHOLDER_COVER = `${import.meta.env.BASE_URL}placeholder-cover.svg`
 
 function nowISO(): string {
   return new Date().toISOString()
+}
+
+function errorMessage(error: unknown, fallback: string): string {
+  return error instanceof Error ? error.message : fallback
 }
 
 function parseAuthors(s: string): string[] {
@@ -72,7 +81,7 @@ export default function App() {
   const [filterText, setFilterText] = useState("")
   const [filterStatus, setFilterStatus] = useState<ReadingStatus | "all">("all")
   const [sortBy, setSortBy] = useState<"year" | "title" | "addedAt">("year")
-const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
 /* ---------- Add-book form ---------- */
 
@@ -89,6 +98,18 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 /* ---------- Camera ---------- */
 
   const [showScanner, setShowScanner] = useState(false)
+  const [showAddBook, setShowAddBook] = useState(false)
+  const [isAddBookClosing, setIsAddBookClosing] = useState(false)
+
+  function openAddBook() {
+    setIsAddBookClosing(false)
+    setShowAddBook(true)
+  }
+
+  function closeAddBook() {
+    setShowScanner(false)
+    setIsAddBookClosing(true)
+  }
   /* =========================
      Derived
   ========================= */
@@ -142,8 +163,8 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
      ISBN autofill
   ========================= */
 
-  async function autofillFromISBN() {
-    if (!isbn.trim()) {
+  async function autofillFromISBN(isbnValue = isbn) {
+    if (!isbnValue.trim()) {
       setMessage("Inserisci un ISBN.")
       return
     }
@@ -151,7 +172,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
     setMessage("Recupero metadati da ISBN…")
 
     try {
-      const b = await fetchBookFromISBN(isbn)
+      const b = await fetchBookFromISBN(isbnValue)
 
       setTitle(b.title)
       setAuthors(b.authors.join(", "))
@@ -162,8 +183,8 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
       setStatus(b.status)
 
       setMessage("Metadati caricati.")
-    } catch (err: any) {
-      setMessage(err?.message ?? "Errore ISBN.")
+    } catch (error: unknown) {
+      setMessage(errorMessage(error, "Errore ISBN."))
     }
   }
 
@@ -208,6 +229,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
     setCategory("")
     setCoverUrl("")
     setStatus("Non letto")
+    closeAddBook()
 
     setMessage("Libro aggiunto (non ancora salvato).")
   }
@@ -241,6 +263,8 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
   ========================= */
 
   function deleteBook(book: Book) {
+    if (!window.confirm(`Eliminare “${book.title}”?`)) return
+
     const id = book.isbn ?? book.addedAt
 
     setWorkingBooks((prev) =>
@@ -272,8 +296,8 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
       await putBooksFile(token, workingBooks, file.sha)
       setDirty(false)
       setMessage("Modifiche salvate.")
-    } catch (err: any) {
-      setMessage(err?.message ?? "Errore durante il commit.")
+    } catch (error: unknown) {
+      setMessage(errorMessage(error, "Errore durante il commit."))
     }
   }
 
@@ -287,10 +311,10 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
       <h2>di Giacomo Lorenzon</h2>
 
       {/* ---------- Token ---------- */}
-      <section>
-        Password: 
+      <section className="token-field">
+        <label htmlFor="github-token">Password</label>
         <input
-          style={{marginLeft: "1em"}}
+          id="github-token"
           type="password"
           placeholder="GitHub token"
           value={token}
@@ -299,81 +323,120 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
       </section>
 
       {/* ---------- Add book ---------- */}
-      <section>
-        <h3>Aggiungi libro</h3>
+      {showAddBook && (
+      <div
+        className={`add-book-layer ${isAddBookClosing ? "is-closing" : ""}`}
+        onMouseDown={closeAddBook}
+        onAnimationEnd={() => {
+          if (isAddBookClosing) {
+            setShowAddBook(false)
+            setIsAddBookClosing(false)
+          }
+        }}
+      >
+      <section
+        className="add-book-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="add-book-title"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <h3 id="add-book-title">Aggiungi libro</h3>
 
+        <label className="sr-only" htmlFor="isbn">ISBN</label>
         <input
+          id="isbn"
+          inputMode="numeric"
           placeholder="ISBN"
           value={isbn}
           onChange={(e) => setIsbn(e.target.value)}
         />
         <button
           style={{marginLeft: "1em"}}
-          onClick={autofillFromISBN}>
+          onClick={() => void autofillFromISBN()}>
             Autocompleta
         </button>
         <button
-          style={{ marginLeft: "1em", scale: "1.8", paddingTop: "0.8em" }}
-          className="edit-button"
+          className="icon-button scan-button"
           onClick={() => setShowScanner(true)}
+          aria-label="Scannerizza ISBN"
           title="Scannerizza ISBN"
         >
           <img
-            src="https://www.svgrepo.com/show/333675/barcode-reader.svg"
+            src={`${import.meta.env.BASE_URL}icons/barcode.svg`}
             alt=""
             className="edit-icon"
           />
         </button>
         {showScanner && (
-          <ISBNScanner
-            onDetected={(code) => {
-              setIsbn(code)
-              setShowScanner(false)
-              autofillFromISBN()
-            }}
-            onClose={() => setShowScanner(false)}
-          />
+          <Suspense fallback={<p>Caricamento scanner…</p>}>
+            <ISBNScanner
+              onDetected={(code) => {
+                setIsbn(code)
+                setShowScanner(false)
+                void autofillFromISBN(code)
+              }}
+              onClose={() => setShowScanner(false)}
+            />
+          </Suspense>
         )}
 
         <div className="Buttons">
+          <label className="sr-only" htmlFor="title">Titolo</label>
           <input
-            style={{marginTop: "2em"}}
+            id="title"
             placeholder="Titolo"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
+          <label className="sr-only" htmlFor="authors">Autori</label>
           <input
+            id="authors"
             placeholder="Autori (separati da virgola)"
             value={authors}
             onChange={(e) => setAuthors(e.target.value)}
           />
+          <label className="sr-only" htmlFor="publisher">Editore</label>
           <input
+            id="publisher"
             placeholder="Editore"
             value={publisher}
             onChange={(e) => setPublisher(e.target.value)}
           />
+          <label className="sr-only" htmlFor="year">Anno</label>
           <input
+            id="year"
+            inputMode="numeric"
             placeholder="Anno"
             value={year}
             onChange={(e) => setYear(e.target.value)}
           />
+          <label className="sr-only" htmlFor="language">Lingua</label>
           <input
+            id="language"
             placeholder="Lingua"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
           />
+          <label className="sr-only" htmlFor="category">Categoria</label>
           <input
+            id="category"
             placeholder="Categoria"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           />
+          <label className="sr-only" htmlFor="cover-url">Copertina URL</label>
           <input
+            id="cover-url"
+            type="url"
             placeholder="Copertina URL"
             value={coverUrl}
             onChange={(e) => setCoverUrl(e.target.value)}
           />
 
+          <label className="sr-only" htmlFor="status">Stato di lettura</label>
           <select
+            id="status"
             value={status}
             onChange={(e) =>
               setStatus(e.target.value as ReadingStatus)
@@ -391,8 +454,10 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
           onClick={addBook}>
             Aggiungi
         </button>
-        <p className="small">{message}</p>
+        <p className="small" role="status" aria-live="polite">{message}</p>
       </section>
+      </div>
+      )}
 
       {/* ---------- Commit ---------- */}
       <section>
@@ -411,16 +476,18 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
         <h2>Consulta</h2>
 
         <div className="controls">
+          <label className="sr-only" htmlFor="book-filter">Cerca nella libreria</label>
           <input
-            style={{width: "100%"}}
+            id="book-filter"
             placeholder="Filtra per titolo, autore, editore…"
             value={filterText}
             onChange={(e) => setFilterText(e.target.value)}
           />
         </div>
-        <div className="controls" style={{marginBottom: "2em"}}>
+        <div className="controls filter-controls">
+          <label className="sr-only" htmlFor="status-filter">Filtra per stato</label>
           <select
-            style={{width: "32%"}}
+            id="status-filter"
             value={filterStatus}
             onChange={(e) =>
               setFilterStatus(e.target.value as ReadingStatus | "all")
@@ -433,8 +500,9 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
             <option value="Da acquistare">Da acquistare</option>
           </select>
 
+          <label className="sr-only" htmlFor="sort-by">Criterio di ordinamento</label>
           <select
-            style={{width: "33%"}}
+            id="sort-by"
             value={sortBy}
             onChange={(e) =>
               setSortBy(e.target.value as "year" | "title" | "addedAt")
@@ -445,8 +513,9 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
             <option value="addedAt">Ordina per data di inserimento</option>
           </select>
 
+          <label className="sr-only" htmlFor="sort-direction">Direzione di ordinamento</label>
           <select
-            style={{width: "32%"}}
+            id="sort-direction"
             value={sortDirection}
             onChange={(e) =>
               setSortDirection(e.target.value as "asc" | "desc")
@@ -510,27 +579,27 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                       </div>
                     </div>
                   </div>
-                  <div style={{display: "flex", flexDirection: "column"}}>
+                  <div className="book-actions">
                   <button
-                    className="edit-button"
+                    className="icon-button"
                     onClick={() => startEdit(b)}
                     aria-label="Modifica libro"
                     title="Modifica"
                   >
                     <img
-                      src="https://www.svgrepo.com/show/146083/pencil-edit-button.svg"
+                      src={`${import.meta.env.BASE_URL}icons/edit.svg`}
                       alt=""
                       className="edit-icon"
                     />
                   </button>
                   <button
-                    className="edit-button"
+                    className="icon-button"
                     onClick={() => deleteBook(b)}
                     aria-label="Elimina libro"
                     title="Elimina"
                   >
                     <img
-                      src="https://www.svgrepo.com/show/433921/bin.svg"
+                      src={`${import.meta.env.BASE_URL}icons/delete.svg`}
                       alt=""
                       className="edit-icon"
                     />
@@ -559,6 +628,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                   <div className="book-meta book-meta-edit">
                     <input
                       type="text"
+                      aria-label="Titolo"
                       value={editDraft!.title}
                       placeholder="Titolo"
                       onChange={(e) =>
@@ -568,6 +638,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
                     <input
                       type="text"
+                      aria-label="Autori"
                       value={editDraft!.authors.join(", ")}
                       placeholder="Autori (separati da virgola)"
                       onChange={(e) =>
@@ -580,6 +651,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
                     <input
                       type="text"
+                      aria-label="Editore"
                       value={editDraft!.publisher ?? ""}
                       placeholder="Editore"
                       onChange={(e) =>
@@ -592,6 +664,8 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
                     <input
                       type="text"
+                      aria-label="Anno"
+                      inputMode="numeric"
                       value={editDraft!.year ?? ""}
                       placeholder="Anno"
                       onChange={(e) =>
@@ -606,6 +680,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
                     <input
                       type="text"
+                      aria-label="Categoria"
                       value={editDraft!.category ?? ""}
                       placeholder="Categoria"
                       onChange={(e) =>
@@ -618,6 +693,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
                     <input
                       type="text"
+                      aria-label="Lingua"
                       value={editDraft!.language ?? ""}
                       placeholder="Lingua"
                       onChange={(e) =>
@@ -629,6 +705,7 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
                     />
 
                     <select
+                      aria-label="Stato di lettura"
                       value={editDraft!.status}
                       onChange={(e) =>
                         setEditDraft({
@@ -656,6 +733,19 @@ const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
           )
         })}
       </section>
+
+      <button
+        className="add-book-fab"
+        type="button"
+        aria-label={showAddBook ? "Chiudi aggiunta libro" : "Aggiungi un libro"}
+        aria-expanded={showAddBook}
+        onClick={() => {
+          if (showAddBook && !isAddBookClosing) closeAddBook()
+          else openAddBook()
+        }}
+      >
+        <span aria-hidden="true">+</span>
+      </button>
     </div>
   )
 }
