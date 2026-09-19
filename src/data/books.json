@@ -662,10 +662,10 @@
     "year": 2005,
     "language": "Inglese",
     "category": "Fisica",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400062560-L.jpg",
     "status": "In lettura",
     "addedAt": "2026-01-07T11:54:19.186Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#efa525"
   },
   {
     "isbn": "0791875927522",
@@ -1585,7 +1585,8 @@
     "category": "Matematica",
     "status": "In lettura",
     "addedAt": "2026-09-14T07:36:44.052Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#575757"
   },
   {
     "isbn": "9781278013947",
