@@ -63,6 +63,7 @@ export async function fetchBookFromISBN(isbnInput: string): Promise<Book> {
       year,
       language: Array.isArray(raw.languages) ? raw.languages?.[0]?.key : undefined,
       coverUrl: `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`,
+      comment: "",
       status: "Non letto",
       addedAt: new Date().toISOString(),
     }
@@ -85,6 +86,7 @@ export async function fetchBookFromISBN(isbnInput: string): Promise<Book> {
         year: Number.isFinite(year) ? year : undefined,
         language: item.language,
         coverUrl: item.imageLinks?.thumbnail,
+        comment: "",
         status: "Non letto",
         addedAt: new Date().toISOString(),
       }

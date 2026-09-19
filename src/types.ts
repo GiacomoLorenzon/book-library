@@ -13,6 +13,8 @@ export type Book = {
   language?: string
   category?: string
   coverUrl?: string
+  placeholderColor?: string
+  comment: string
   status: ReadingStatus
   addedAt: string
 }

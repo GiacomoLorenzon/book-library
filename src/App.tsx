@@ -11,6 +11,10 @@ const ISBNScanner = lazy(() =>
 )
 
 const PLACEHOLDER_COVER = `${import.meta.env.BASE_URL}placeholder-cover.svg`
+const FALLBACK_COVER_COLORS = [
+  "#e7b8ad", "#e6c88f", "#d8d39b", "#b8cfb2",
+  "#acd0cb", "#b7c9df", "#c7bddb", "#d9b9ca",
+]
 
 /* =========================
    Utilities
@@ -40,6 +44,57 @@ function coverWithFallback(url?: string): string {
   return url?.trim() || PLACEHOLDER_COVER
 }
 
+function fallbackCoverColor(book: Pick<Book, "isbn" | "title" | "addedAt" | "placeholderColor">): string {
+  if (book.placeholderColor) return book.placeholderColor
+
+  const seed = book.isbn || book.addedAt || book.title
+  let hash = 0
+
+  for (let index = 0; index < seed.length; index += 1) {
+    hash = ((hash << 5) - hash + seed.charCodeAt(index)) | 0
+  }
+
+  return FALLBACK_COVER_COLORS[Math.abs(hash) % FALLBACK_COVER_COLORS.length]
+}
+
+function CoverColorPicker({
+  value,
+  onChange,
+  id,
+}: {
+  value: string
+  onChange: (value: string) => void
+  id: string
+}) {
+  return (
+    <div className="cover-color-field">
+      <label className="color-picker" htmlFor={id} title="Scegli colore">
+        <span
+          className={`color-picker-preview ${value ? "has-color" : ""}`}
+          style={value ? { backgroundColor: value } : undefined}
+        />
+        <input
+          id={id}
+          type="color"
+          aria-label="Colore segnaposto della copertina"
+          value={value || "#d8d39b"}
+          onChange={(event) => onChange(event.target.value)}
+        />
+      </label>
+      <button
+        type="button"
+        className="random-color-button"
+        aria-label="Usa colore casuale"
+        title="Usa colore casuale"
+        disabled={!value}
+        onClick={() => onChange("")}
+      >
+        <span aria-hidden="true">↻</span>
+      </button>
+    </div>
+  )
+}
+
 function handleCoverError(e: SyntheticEvent<HTMLImageElement>) {
   // Se la copertina remota non carica, passa al segnaposto e mostra il fallback testuale.
   if (!e.currentTarget.closest(".book-cover")?.classList.contains("is-fallback")) {
@@ -62,7 +117,7 @@ export default function App() {
   /* ---------- Working copy ---------- */
 
   const [workingBooks, setWorkingBooks] = useState<Book[]>(
-    booksSeed as Book[]
+    (booksSeed as Book[]).map((book) => ({ ...book, comment: book.comment ?? "" }))
   )
   const [dirty, setDirty] = useState(false)
 
@@ -75,6 +130,8 @@ export default function App() {
 
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editDraft, setEditDraft] = useState<Book | null>(null)
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null)
+  const [detailEditDraft, setDetailEditDraft] = useState<Book | null>(null)
 
   /* ---------- Filters & sorting ---------- */
 
@@ -82,6 +139,7 @@ export default function App() {
   const [filterStatus, setFilterStatus] = useState<ReadingStatus | "all">("all")
   const [sortBy, setSortBy] = useState<"year" | "title" | "addedAt">("year")
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
+  const [viewMode, setViewMode] = useState<"list" | "grid">("list")
 
 /* ---------- Add-book form ---------- */
 
@@ -93,6 +151,8 @@ export default function App() {
   const [language, setLanguage] = useState("")
   const [category, setCategory] = useState("")
   const [coverUrl, setCoverUrl] = useState("")
+  const [placeholderColor, setPlaceholderColor] = useState("")
+  const [comment, setComment] = useState("")
   const [status, setStatus] = useState<ReadingStatus>("Non letto")
 
 /* ---------- Camera ---------- */
@@ -128,6 +188,7 @@ export default function App() {
         b.category,
         b.language,
         b.status,
+        b.comment,
         b.year ? String(b.year) : "",
       ]
         .filter(Boolean)
@@ -213,6 +274,8 @@ export default function App() {
       language: language.trim() || undefined,
       category: category.trim() || undefined,
       coverUrl: coverUrl.trim() || undefined,
+      placeholderColor: placeholderColor || undefined,
+      comment: comment.trim(),
       status,
       addedAt: nowISO(),
     }
@@ -228,6 +291,8 @@ export default function App() {
     setLanguage("")
     setCategory("")
     setCoverUrl("")
+    setPlaceholderColor("")
+    setComment("")
     setStatus("Non letto")
     closeAddBook()
 
@@ -239,8 +304,7 @@ export default function App() {
   ========================= */
 
   function startEdit(book: Book) {
-    setEditingId(book.isbn ?? book.addedAt)
-    setEditDraft({ ...book })
+    setDetailEditDraft({ ...book })
   }
 
   function cancelEdit() {
@@ -256,6 +320,27 @@ export default function App() {
     )
     setDirty(true)
     cancelEdit()
+  }
+
+  function saveDetailEdit() {
+    if (!selectedBook || !detailEditDraft || !detailEditDraft.title.trim()) return
+
+    const updatedBook = {
+      ...detailEditDraft,
+      title: detailEditDraft.title.trim(),
+    }
+    setWorkingBooks((prev) =>
+      prev.map((book) => (sameBook(book, selectedBook) ? updatedBook : book))
+    )
+    setSelectedBook(updatedBook)
+    setDetailEditDraft(null)
+    setDirty(true)
+    setMessage("Libro modificato (non ancora salvato).")
+  }
+
+  function closeBookDetail() {
+    setSelectedBook(null)
+    setDetailEditDraft(null)
   }
 
   /* =========================
@@ -274,6 +359,10 @@ export default function App() {
 
     if (editingId === id) {
       cancelEdit()
+    }
+
+    if (selectedBook && sameBook(selectedBook, book)) {
+      setSelectedBook(null)
     }
 
     setMessage("Libro rimosso (non ancora salvato).")
@@ -433,7 +522,6 @@ export default function App() {
             value={coverUrl}
             onChange={(e) => setCoverUrl(e.target.value)}
           />
-
           <label className="sr-only" htmlFor="status">Stato di lettura</label>
           <select
             id="status"
@@ -447,6 +535,19 @@ export default function App() {
             <option value="In lettura">In lettura</option>
             <option value="Da acquistare">Da acquistare</option>
           </select>
+          <label className="sr-only" htmlFor="comment">Commento</label>
+          <textarea
+            id="comment"
+            placeholder="Commento"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          />
+
+          <CoverColorPicker
+            id="new-book-placeholder-color"
+            value={placeholderColor}
+            onChange={setPlaceholderColor}
+          />
         </div>
 
         <button
@@ -526,11 +627,57 @@ export default function App() {
           </select>
         </div>
 
+        <div className="view-switch" aria-label="Modalità di visualizzazione">
+          <button
+            type="button"
+            className={`view-toggle ${viewMode === "grid" ? "shows-grid" : ""}`}
+            role="switch"
+            aria-checked={viewMode === "grid"}
+            aria-label={`Visualizzazione ${viewMode === "list" ? "a elenco" : "a copertine"}. Premi per cambiare.`}
+            onClick={() => {
+              const nextMode = viewMode === "list" ? "grid" : "list"
+              if (nextMode === "grid") cancelEdit()
+              setViewMode(nextMode)
+            }}
+          >
+            <span>Elenco</span>
+            <span>Copertine</span>
+          </button>
+        </div>
+
+        <div className={`books-container ${viewMode === "grid" ? "grid-view" : "list-view"}`}>
         {visibleBooks.map((b) => {
           const id = b.isbn ?? b.addedAt
           const isEditing = editingId === id
           const coverSrc = coverWithFallback(b.coverUrl)
           const showPlaceholder = !b.coverUrl?.trim()
+
+          if (viewMode === "grid") {
+            return (
+              <button
+                type="button"
+                key={id}
+                className="cover-card"
+                aria-label={`Apri la scheda di ${b.title}`}
+                title={b.title}
+                onClick={() => setSelectedBook(b)}
+              >
+                <span className={`book-cover grid-cover ${showPlaceholder ? "is-fallback" : ""}`}>
+                  <img
+                    src={coverSrc}
+                    alt={`Copertina di ${b.title}`}
+                    onError={handleCoverError}
+                  />
+                  <span
+                    className="book-cover-fallback"
+                    style={{ backgroundColor: fallbackCoverColor(b) }}
+                  >
+                    <span>{b.title}</span>
+                  </span>
+                </span>
+              </button>
+            )
+          }
 
           return (
             <div
@@ -541,7 +688,18 @@ export default function App() {
                 /* =========================
                   VIEW MODE
                 ========================= */
-                <div className="book-row">
+                <div
+                  className="book-row book-row-clickable"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setSelectedBook(b)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault()
+                      setSelectedBook(b)
+                    }
+                  }}
+                >
                   <div
                     className={`book-cover ${showPlaceholder ? "is-fallback" : ""}`}
                   >
@@ -550,7 +708,10 @@ export default function App() {
                       alt={`Copertina di ${b.title}`}
                       onError={handleCoverError}
                     />
-                    <div className="book-cover-fallback">
+                    <div
+                      className="book-cover-fallback"
+                      style={{ backgroundColor: fallbackCoverColor(b) }}
+                    >
                       <span>{b.title}</span>
                     </div>
                   </div>
@@ -579,32 +740,6 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="book-actions">
-                  <button
-                    className="icon-button"
-                    onClick={() => startEdit(b)}
-                    aria-label="Modifica libro"
-                    title="Modifica"
-                  >
-                    <img
-                      src={`${import.meta.env.BASE_URL}icons/edit.svg`}
-                      alt=""
-                      className="edit-icon"
-                    />
-                  </button>
-                  <button
-                    className="icon-button"
-                    onClick={() => deleteBook(b)}
-                    aria-label="Elimina libro"
-                    title="Elimina"
-                  >
-                    <img
-                      src={`${import.meta.env.BASE_URL}icons/delete.svg`}
-                      alt=""
-                      className="edit-icon"
-                    />
-                  </button>
-                  </div>
                 </div>
               ) : (
                 /* =========================
@@ -620,7 +755,9 @@ export default function App() {
                       onError={handleCoverError}
                     />
                     <div
-                      className="book-cover-fallback">
+                      className="book-cover-fallback"
+                      style={{ backgroundColor: fallbackCoverColor(editDraft!) }}
+                    >
                       <span>{editDraft!.title}</span>
                     </div>
                   </div>
@@ -720,6 +857,18 @@ export default function App() {
                       <option value="Da acquistare">Da acquistare</option>
                     </select>
 
+                    <textarea
+                      aria-label="Commento"
+                      value={editDraft!.comment ?? ""}
+                      placeholder="Commento"
+                      onChange={(e) =>
+                        setEditDraft({
+                          ...editDraft!,
+                          comment: e.target.value,
+                        })
+                      }
+                    />
+
                     <div>
                       <button
                         style={{marginRight: "0.5em"}}
@@ -732,7 +881,94 @@ export default function App() {
             </div>
           )
         })}
+        </div>
       </section>
+
+      {selectedBook && (
+        <div className="book-detail-layer" onMouseDown={closeBookDetail}>
+          <article
+            className="book-detail"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="book-detail-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="detail-close"
+              aria-label="Chiudi scheda"
+              onClick={closeBookDetail}
+            >
+              ×
+            </button>
+            <div className={`book-cover detail-cover ${!selectedBook.coverUrl?.trim() ? "is-fallback" : ""}`}>
+              <img
+                src={coverWithFallback(selectedBook.coverUrl)}
+                alt={`Copertina di ${selectedBook.title}`}
+                onError={handleCoverError}
+              />
+              <div
+                className="book-cover-fallback"
+                style={{ backgroundColor: fallbackCoverColor(selectedBook) }}
+              >
+                <span>{selectedBook.title}</span>
+              </div>
+            </div>
+            <div className="detail-content">
+              {detailEditDraft ? (
+                <div className="detail-edit-form">
+                  <h3 id="book-detail-title">Modifica libro</h3>
+                  <input className="wide-field" aria-label="Titolo" placeholder="Titolo" value={detailEditDraft.title} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, title: event.target.value })} />
+                  <input className="wide-field" aria-label="Autori" placeholder="Autori (separati da virgola)" value={detailEditDraft.authors.join(", ")} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, authors: parseAuthors(event.target.value) })} />
+                  <input aria-label="Editore" placeholder="Editore" value={detailEditDraft.publisher ?? ""} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, publisher: event.target.value || undefined })} />
+                  <input aria-label="Anno" inputMode="numeric" placeholder="Anno" value={detailEditDraft.year ?? ""} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, year: event.target.value ? parseInt(event.target.value, 10) : undefined })} />
+                  <input aria-label="Categoria" placeholder="Categoria" value={detailEditDraft.category ?? ""} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, category: event.target.value || undefined })} />
+                  <input aria-label="Lingua" placeholder="Lingua" value={detailEditDraft.language ?? ""} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, language: event.target.value || undefined })} />
+                  <input aria-label="ISBN" placeholder="ISBN" value={detailEditDraft.isbn ?? ""} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, isbn: event.target.value || undefined })} />
+                  <input aria-label="URL copertina" type="url" placeholder="URL copertina" value={detailEditDraft.coverUrl ?? ""} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, coverUrl: event.target.value || undefined })} />
+                  <select aria-label="Stato di lettura" value={detailEditDraft.status} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, status: event.target.value as ReadingStatus })}>
+                    <option value="Letto">Letto</option>
+                    <option value="Non letto">Non letto</option>
+                    <option value="In lettura">In lettura</option>
+                    <option value="Da acquistare">Da acquistare</option>
+                  </select>
+                  <CoverColorPicker
+                    id="edit-book-placeholder-color"
+                    value={detailEditDraft.placeholderColor ?? ""}
+                    onChange={(color) => setDetailEditDraft({ ...detailEditDraft, placeholderColor: color || undefined })}
+                  />
+                  <textarea className="wide-field" aria-label="Commento" placeholder="Commento" value={detailEditDraft.comment} onChange={(event) => setDetailEditDraft({ ...detailEditDraft, comment: event.target.value })} />
+                  <div className="detail-actions">
+                    <button type="button" onClick={saveDetailEdit} disabled={!detailEditDraft.title.trim()}>Salva</button>
+                    <button type="button" className="secondary-button" onClick={() => setDetailEditDraft(null)}>Annulla</button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <h3 id="book-detail-title">{selectedBook.title}</h3>
+                  <p>{selectedBook.authors.join(", ") || "Autore non indicato"}</p>
+                  <dl>
+                    {selectedBook.publisher && <><dt>Editore</dt><dd>{selectedBook.publisher}</dd></>}
+                    {selectedBook.year && <><dt>Anno</dt><dd>{selectedBook.year}</dd></>}
+                    {selectedBook.category && <><dt>Categoria</dt><dd>{selectedBook.category}</dd></>}
+                    {selectedBook.language && <><dt>Lingua</dt><dd>{selectedBook.language}</dd></>}
+                    <dt>Stato</dt><dd>{selectedBook.status}</dd>
+                    {selectedBook.isbn && <><dt>ISBN</dt><dd>{selectedBook.isbn}</dd></>}
+                  </dl>
+                  <div className="detail-comment">
+                    <strong>Commento</strong>
+                    <p>{selectedBook.comment || "Nessun commento."}</p>
+                  </div>
+                  <div className="detail-actions">
+                    <button type="button" onClick={() => startEdit(selectedBook)}>Modifica</button>
+                    <button type="button" className="danger-button" onClick={() => deleteBook(selectedBook)}>Elimina</button>
+                  </div>
+                </>
+              )}
+            </div>
+          </article>
+        </div>
+      )}
 
       <button
         className="add-book-fab"

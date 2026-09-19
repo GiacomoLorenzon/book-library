@@ -11,7 +11,8 @@
     "category": "Scienza",
     "coverUrl": "http://books.google.com/books/content?id=j926twAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2025-12-13T19:34:51.001Z"
+    "addedAt": "2025-12-13T19:34:51.001Z",
+    "comment": ""
   },
   {
     "isbn": "9788845940293",
@@ -25,7 +26,8 @@
     "category": "Scienza",
     "coverUrl": "http://books.google.com/books/content?id=PMCe0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-13T19:35:26.781Z"
+    "addedAt": "2025-12-13T19:35:26.781Z",
+    "comment": ""
   },
   {
     "isbn": "9782070744619",
@@ -39,7 +41,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782070744619-L.jpg",
     "status": "Letto",
-    "addedAt": "2025-12-14T01:37:49.230Z"
+    "addedAt": "2025-12-14T01:37:49.230Z",
+    "comment": ""
   },
   {
     "isbn": "9788807887352",
@@ -53,7 +56,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=ImqZjgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2025-12-14T01:38:56.622Z"
+    "addedAt": "2025-12-14T01:38:56.622Z",
+    "comment": ""
   },
   {
     "isbn": "9788804668374",
@@ -67,7 +71,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=CYa5DAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-14T01:40:10.101Z"
+    "addedAt": "2025-12-14T01:40:10.101Z",
+    "comment": ""
   },
   {
     "isbn": "9788838946257",
@@ -81,7 +86,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788838946257-L.jpg",
     "status": "Non letto",
-    "addedAt": "2025-12-14T10:55:35.680Z"
+    "addedAt": "2025-12-14T10:55:35.680Z",
+    "comment": ""
   },
   {
     "isbn": "9788804772088",
@@ -95,7 +101,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=rKJ1zwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-14T11:04:56.821Z"
+    "addedAt": "2025-12-14T11:04:56.821Z",
+    "comment": ""
   },
   {
     "isbn": "9788845909825",
@@ -109,7 +116,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845909825-L.jpg",
     "status": "Non letto",
-    "addedAt": "2025-12-14T11:07:08.152Z"
+    "addedAt": "2025-12-14T11:07:08.152Z",
+    "comment": ""
   },
   {
     "isbn": "9788845924002",
@@ -123,7 +131,8 @@
     "category": "Poesia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845924002-L.jpg",
     "status": "In lettura",
-    "addedAt": "2025-12-14T11:07:57.133Z"
+    "addedAt": "2025-12-14T11:07:57.133Z",
+    "comment": ""
   },
   {
     "isbn": "9788845936258",
@@ -137,7 +146,8 @@
     "category": "Biografia",
     "coverUrl": "http://books.google.com/books/content?id=FBqczgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-14T11:09:08.677Z"
+    "addedAt": "2025-12-14T11:09:08.677Z",
+    "comment": ""
   },
   {
     "isbn": "9782070380596",
@@ -151,7 +161,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782070380596-L.jpg",
     "status": "In lettura",
-    "addedAt": "2025-12-14T12:41:00.268Z"
+    "addedAt": "2025-12-14T12:41:00.268Z",
+    "comment": ""
   },
   {
     "isbn": "9788845929083",
@@ -165,7 +176,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=F1y3oQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-14T12:41:50.351Z"
+    "addedAt": "2025-12-14T12:41:50.351Z",
+    "comment": ""
   },
   {
     "isbn": "9788806181062",
@@ -179,7 +191,8 @@
     "category": "Filosofia",
     "coverUrl": "http://books.google.com/books/content?id=rDx0AAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-14T12:43:30.655Z"
+    "addedAt": "2025-12-14T12:43:30.655Z",
+    "comment": ""
   },
   {
     "isbn": "9788845927867",
@@ -193,7 +206,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845927867-L.jpg",
     "status": "Non letto",
-    "addedAt": "2025-12-14T12:44:40.316Z"
+    "addedAt": "2025-12-14T12:44:40.316Z",
+    "comment": ""
   },
   {
     "isbn": "9788883585542",
@@ -207,7 +221,8 @@
     "category": "Medicina",
     "coverUrl": "http://books.google.com/books/content?id=JTLmkmi_I24C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-14T12:45:31.916Z"
+    "addedAt": "2025-12-14T12:45:31.916Z",
+    "comment": ""
   },
   {
     "isbn": "9788838946035",
@@ -221,7 +236,8 @@
     "category": "Giallo",
     "coverUrl": "http://books.google.com/books/content?id=GXw-0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2025-12-14T12:53:06.071Z"
+    "addedAt": "2025-12-14T12:53:06.071Z",
+    "comment": ""
   },
   {
     "isbn": "6788015917578",
@@ -234,7 +250,8 @@
     "language": "Italiano",
     "category": "Narrativa",
     "status": "Non letto",
-    "addedAt": "2025-12-14T12:56:04.025Z"
+    "addedAt": "2025-12-14T12:56:04.025Z",
+    "comment": ""
   },
   {
     "isbn": "9788845929649",
@@ -248,7 +265,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845929649-L.jpg",
     "status": "Non letto",
-    "addedAt": "2025-12-14T12:56:38.420Z"
+    "addedAt": "2025-12-14T12:56:38.420Z",
+    "comment": ""
   },
   {
     "isbn": "9788845933950",
@@ -262,7 +280,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=58FrxgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2025-12-14T12:57:13.314Z"
+    "addedAt": "2025-12-14T12:57:13.314Z",
+    "comment": ""
   },
   {
     "isbn": "5788203923139",
@@ -275,7 +294,8 @@
     "language": "Italiano",
     "category": "Narrativa",
     "status": "Non letto",
-    "addedAt": "2025-12-14T12:58:59.228Z"
+    "addedAt": "2025-12-14T12:58:59.228Z",
+    "comment": ""
   },
   {
     "title": "A Moveable Feast",
@@ -287,7 +307,8 @@
     "language": "Inglese",
     "category": "Narrativa",
     "status": "Non letto",
-    "addedAt": "2025-12-15T22:16:10.360Z"
+    "addedAt": "2025-12-15T22:16:10.360Z",
+    "comment": ""
   },
   {
     "title": "Il giardino dei Finzi-Contini",
@@ -299,7 +320,8 @@
     "language": "Italiano",
     "category": "Narrativa",
     "status": "Non letto",
-    "addedAt": "2025-12-15T22:16:53.886Z"
+    "addedAt": "2025-12-15T22:16:53.886Z",
+    "comment": ""
   },
   {
     "isbn": "9788845986390",
@@ -313,7 +335,8 @@
     "category": "Cronaca",
     "coverUrl": "http://books.google.com/books/content?id=u2WyEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2025-12-16T21:36:20.169Z"
+    "addedAt": "2025-12-16T21:36:20.169Z",
+    "comment": ""
   },
   {
     "isbn": "9788804683223",
@@ -327,7 +350,8 @@
     "category": "Cronaca",
     "coverUrl": "http://books.google.com/books/content?id=BRxaswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2025-12-16T21:38:26.565Z"
+    "addedAt": "2025-12-16T21:38:26.565Z",
+    "comment": ""
   },
   {
     "isbn": "9788835721673",
@@ -341,7 +365,8 @@
     "category": "Cronaca",
     "coverUrl": "http://books.google.com/books/content?id=zOKUEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2025-12-16T21:39:21.609Z"
+    "addedAt": "2025-12-16T21:39:21.609Z",
+    "comment": ""
   },
   {
     "isbn": "9780063423534",
@@ -355,7 +380,8 @@
     "category": "Economia",
     "coverUrl": "http://books.google.com/books/content?id=3_zi0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2025-12-16T21:42:22.252Z"
+    "addedAt": "2025-12-16T21:42:22.252Z",
+    "comment": ""
   },
   {
     "isbn": "9788804666639",
@@ -369,7 +395,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804666639-L.jpg",
     "status": "Non letto",
-    "addedAt": "2025-12-25T08:58:10.762Z"
+    "addedAt": "2025-12-25T08:58:10.762Z",
+    "comment": ""
   },
   {
     "isbn": "9788838948976",
@@ -383,7 +410,8 @@
     "category": "Giallo",
     "coverUrl": "http://books.google.com/books/content?id=HQ2r0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2025-12-25T08:59:40.685Z"
+    "addedAt": "2025-12-25T08:59:40.685Z",
+    "comment": ""
   },
   {
     "isbn": "9788804801818",
@@ -397,7 +425,8 @@
     "category": "Giornalismo",
     "coverUrl": "http://books.google.com/books/content?id=quaZ0QEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2025-12-25T09:00:25.799Z"
+    "addedAt": "2025-12-25T09:00:25.799Z",
+    "comment": ""
   },
   {
     "isbn": "9788845933974",
@@ -411,7 +440,8 @@
     "category": "Medicina",
     "coverUrl": "http://books.google.com/books/content?id=HbmoxgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-25T09:01:05.584Z"
+    "addedAt": "2025-12-25T09:01:05.584Z",
+    "comment": ""
   },
   {
     "isbn": "9788806219222",
@@ -425,7 +455,8 @@
     "category": "Antropologia",
     "coverUrl": "http://books.google.com/books/content?id=nBa-ngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2025-12-25T09:02:06.759Z"
+    "addedAt": "2025-12-25T09:02:06.759Z",
+    "comment": ""
   },
   {
     "isbn": "9788845925023",
@@ -439,7 +470,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845925023-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-01-06T18:37:32.037Z"
+    "addedAt": "2026-01-06T18:37:32.037Z",
+    "comment": ""
   },
   {
     "isbn": "9788817179348",
@@ -453,7 +485,8 @@
     "category": "Fisica",
     "coverUrl": "http://books.google.com/books/content?id=RjUF0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2026-01-06T18:39:06.228Z"
+    "addedAt": "2026-01-06T18:39:06.228Z",
+    "comment": ""
   },
   {
     "isbn": "9788832850659",
@@ -467,7 +500,8 @@
     "category": "Fisica",
     "coverUrl": "http://books.google.com/books/content?id=88YPwQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2026-01-06T18:39:56.098Z"
+    "addedAt": "2026-01-06T18:39:56.098Z",
+    "comment": ""
   },
   {
     "isbn": "9788866324782",
@@ -481,7 +515,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=QsaFoAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-01-06T18:40:46.745Z"
+    "addedAt": "2026-01-06T18:40:46.745Z",
+    "comment": ""
   },
   {
     "isbn": "9788806246907",
@@ -495,7 +530,8 @@
     "category": "Scienza",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806246907-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-01-06T18:42:13.391Z"
+    "addedAt": "2026-01-06T18:42:13.391Z",
+    "comment": ""
   },
   {
     "isbn": "9788834010839",
@@ -509,7 +545,8 @@
     "category": "Filosofia",
     "coverUrl": "http://books.google.com/books/content?id=zb0hAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2026-01-06T18:43:19.222Z"
+    "addedAt": "2026-01-06T18:43:19.222Z",
+    "comment": ""
   },
   {
     "isbn": "9788838933529",
@@ -523,7 +560,8 @@
     "category": "Storia",
     "coverUrl": "http://books.google.com/books/content?id=ovJLrgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-01-06T18:44:56.249Z"
+    "addedAt": "2026-01-06T18:44:56.249Z",
+    "comment": ""
   },
   {
     "isbn": "9788845917721",
@@ -537,7 +575,8 @@
     "category": "Filosofia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845917721-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-01-06T18:46:09.934Z"
+    "addedAt": "2026-01-06T18:46:09.934Z",
+    "comment": ""
   },
   {
     "isbn": "0700835930250",
@@ -550,7 +589,8 @@
     "language": "Italiano",
     "category": "Medicina",
     "status": "Letto",
-    "addedAt": "2026-01-06T18:47:27.260Z"
+    "addedAt": "2026-01-06T18:47:27.260Z",
+    "comment": ""
   },
   {
     "isbn": "9788845931925",
@@ -564,7 +604,8 @@
     "category": "Fisica",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845931925-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-01-06T18:48:32.297Z"
+    "addedAt": "2026-01-06T18:48:32.297Z",
+    "comment": ""
   },
   {
     "isbn": "9788845938306",
@@ -578,7 +619,8 @@
     "category": "Viaggio",
     "coverUrl": "http://books.google.com/books/content?id=PRVa0AEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2026-01-06T18:49:07.986Z"
+    "addedAt": "2026-01-06T18:49:07.986Z",
+    "comment": ""
   },
   {
     "isbn": "9788806258658",
@@ -592,7 +634,8 @@
     "category": "Filosofia",
     "coverUrl": "http://books.google.com/books/content?id=8P7DzwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2026-01-07T11:52:41.295Z"
+    "addedAt": "2026-01-07T11:52:41.295Z",
+    "comment": ""
   },
   {
     "isbn": "9788845919480",
@@ -606,7 +649,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=QYB-PQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Non letto",
-    "addedAt": "2026-01-07T11:53:34.541Z"
+    "addedAt": "2026-01-07T11:53:34.541Z",
+    "comment": ""
   },
   {
     "isbn": "9781400062560",
@@ -620,7 +664,8 @@
     "category": "Fisica",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400062560-L.jpg",
     "status": "In lettura",
-    "addedAt": "2026-01-07T11:54:19.186Z"
+    "addedAt": "2026-01-07T11:54:19.186Z",
+    "comment": ""
   },
   {
     "isbn": "0791875927522",
@@ -633,7 +678,8 @@
     "language": "Italiano",
     "category": "Narrativa",
     "status": "In lettura",
-    "addedAt": "2026-01-16T17:56:37.496Z"
+    "addedAt": "2026-01-16T17:56:37.496Z",
+    "comment": ""
   },
   {
     "isbn": "9788807881749",
@@ -647,7 +693,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=FO9cmQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2026-01-16T17:57:50.351Z"
+    "addedAt": "2026-01-16T17:57:50.351Z",
+    "comment": ""
   },
   {
     "isbn": "9788845934773",
@@ -662,7 +709,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=Qh6ezQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "In lettura",
-    "addedAt": "2026-01-16T17:58:25.627Z"
+    "addedAt": "2026-01-16T17:58:25.627Z",
+    "comment": ""
   },
   {
     "isbn": "9788804668022",
@@ -676,7 +724,8 @@
     "category": "Classici",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804668022-L.jpg",
     "status": "In lettura",
-    "addedAt": "2026-01-16T17:58:56.792Z"
+    "addedAt": "2026-01-16T17:58:56.792Z",
+    "comment": ""
   },
   {
     "isbn": "9788245971477",
@@ -689,7 +738,8 @@
     "language": "Italiano",
     "category": "Medicina",
     "status": "Letto",
-    "addedAt": "2026-01-16T18:01:50.617Z"
+    "addedAt": "2026-01-16T18:01:50.617Z",
+    "comment": ""
   },
   {
     "isbn": "9788817120715",
@@ -703,7 +753,8 @@
     "category": "Classici",
     "coverUrl": "http://books.google.com/books/content?id=I9pLAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-01-16T18:03:04.305Z"
+    "addedAt": "2026-01-16T18:03:04.305Z",
+    "comment": ""
   },
   {
     "isbn": "9788807902833",
@@ -717,7 +768,8 @@
     "category": "Filosofia",
     "coverUrl": "http://books.google.com/books/content?id=qmRHswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-01-16T18:03:38.684Z"
+    "addedAt": "2026-01-16T18:03:38.684Z",
+    "comment": ""
   },
   {
     "isbn": "9788845937880",
@@ -731,7 +783,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=vprtzwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-01-16T18:04:20.566Z"
+    "addedAt": "2026-01-16T18:04:20.566Z",
+    "comment": ""
   },
   {
     "isbn": "9788857506937",
@@ -745,7 +798,8 @@
     "category": "Filosofia",
     "coverUrl": "http://books.google.com/books/content?id=3gZjXwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-01-16T18:05:40.990Z"
+    "addedAt": "2026-01-16T18:05:40.990Z",
+    "comment": ""
   },
   {
     "isbn": "9788817061155",
@@ -759,7 +813,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=4QKOMgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Da acquistare",
-    "addedAt": "2026-02-03T16:12:44.766Z"
+    "addedAt": "2026-02-03T16:12:44.766Z",
+    "comment": ""
   },
   {
     "isbn": "9788870636963",
@@ -773,7 +828,8 @@
     "category": "Musica",
     "coverUrl": "http://books.google.com/books/content?id=kYaQPBSl86QC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-02-03T16:14:56.684Z"
+    "addedAt": "2026-02-03T16:14:56.684Z",
+    "comment": ""
   },
   {
     "isbn": "9788845916250",
@@ -787,7 +843,8 @@
     "category": "Medicina",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845916250-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-02-03T16:16:53.983Z"
+    "addedAt": "2026-02-03T16:16:53.983Z",
+    "comment": ""
   },
   {
     "isbn": "9788845935657",
@@ -801,7 +858,8 @@
     "category": "Letteratura",
     "coverUrl": "http://books.google.com/books/content?id=QUt0zgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-02-03T16:18:55.176Z"
+    "addedAt": "2026-02-03T16:18:55.176Z",
+    "comment": ""
   },
   {
     "isbn": "9788804736127",
@@ -815,7 +873,8 @@
     "category": "Economia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788804736127-L.jpg",
     "status": "Da acquistare",
-    "addedAt": "2026-02-03T16:30:29.372Z"
+    "addedAt": "2026-02-03T16:30:29.372Z",
+    "comment": ""
   },
   {
     "isbn": "9788804734451",
@@ -829,7 +888,8 @@
     "category": "Narrativa",
     "coverUrl": "http://books.google.com/books/content?id=3x5zzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-02-03T16:31:51.745Z"
+    "addedAt": "2026-02-03T16:31:51.745Z",
+    "comment": ""
   },
   {
     "isbn": "9788845902161",
@@ -843,7 +903,8 @@
     "category": "Medicina",
     "coverUrl": "http://books.google.com/books/content?id=VWDMAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "status": "Letto",
-    "addedAt": "2026-02-03T16:48:04.796Z"
+    "addedAt": "2026-02-03T16:48:04.796Z",
+    "comment": ""
   },
   {
     "title": "Let them talk",
@@ -855,7 +916,8 @@
     "language": "Italiano",
     "category": "Biografia",
     "status": "In lettura",
-    "addedAt": "2026-02-03T23:52:29.219Z"
+    "addedAt": "2026-02-03T23:52:29.219Z",
+    "comment": ""
   },
   {
     "isbn": "9783836527835",
@@ -869,7 +931,8 @@
     "category": "Arte",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9783836527835-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-02-16T18:40:35.248Z"
+    "addedAt": "2026-02-16T18:40:35.248Z",
+    "comment": ""
   },
   {
     "isbn": "9783836532235",
@@ -883,7 +946,8 @@
     "category": "Arte",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9783836532235-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-02-16T18:46:49.681Z"
+    "addedAt": "2026-02-16T18:46:49.681Z",
+    "comment": ""
   },
   {
     "isbn": "9783836504256",
@@ -897,7 +961,8 @@
     "category": "Arte",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9783836504256-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-02-16T18:47:44.276Z"
+    "addedAt": "2026-02-16T18:47:44.276Z",
+    "comment": ""
   },
   {
     "isbn": "9788857554099",
@@ -910,7 +975,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "In lettura",
-    "addedAt": "2026-04-10T19:02:36.214Z"
+    "addedAt": "2026-04-10T19:02:36.214Z",
+    "comment": ""
   },
   {
     "isbn": "9788845908927",
@@ -924,7 +990,8 @@
     "category": "Filosofia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845908927-L.jpg",
     "status": "In lettura",
-    "addedAt": "2026-04-10T19:05:45.523Z"
+    "addedAt": "2026-04-10T19:05:45.523Z",
+    "comment": ""
   },
   {
     "isbn": "9788815019806",
@@ -938,7 +1005,8 @@
     "category": "Saggi",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788815019806-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-07-26T10:16:14.679Z"
+    "addedAt": "2026-07-26T10:16:14.679Z",
+    "comment": ""
   },
   {
     "isbn": "9781603866163",
@@ -952,7 +1020,8 @@
     "category": "Scienze",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781603866163-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:05:39.336Z"
+    "addedAt": "2026-08-02T13:05:39.336Z",
+    "comment": ""
   },
   {
     "isbn": "6188105927850",
@@ -965,7 +1034,8 @@
     "language": "Italiano",
     "category": "Scienze",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:07:35.789Z"
+    "addedAt": "2026-08-02T13:07:35.789Z",
+    "comment": ""
   },
   {
     "isbn": "9788860617538",
@@ -979,7 +1049,8 @@
     "language": "Italiano",
     "category": "Scienze",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:09:31.039Z"
+    "addedAt": "2026-08-02T13:09:31.039Z",
+    "comment": ""
   },
   {
     "isbn": "9788817079754",
@@ -993,7 +1064,8 @@
     "category": "Scienze",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788817079754-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:10:15.045Z"
+    "addedAt": "2026-08-02T13:10:15.045Z",
+    "comment": ""
   },
   {
     "isbn": "9788815274236",
@@ -1007,7 +1079,8 @@
     "language": "Italiani",
     "category": "Scienze",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:11:22.394Z"
+    "addedAt": "2026-08-02T13:11:22.394Z",
+    "comment": ""
   },
   {
     "isbn": "9788845929250",
@@ -1021,7 +1094,8 @@
     "category": "Scienze",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845929250-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:12:21.234Z"
+    "addedAt": "2026-08-02T13:12:21.234Z",
+    "comment": ""
   },
   {
     "isbn": "9788809771420",
@@ -1034,7 +1108,8 @@
     "language": "Italiano",
     "category": "Scienze",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:13:43.874Z"
+    "addedAt": "2026-08-02T13:13:43.874Z",
+    "comment": ""
   },
   {
     "isbn": "9788808098771",
@@ -1047,7 +1122,8 @@
     "language": "Italiano",
     "category": "Scienze",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:15:42.730Z"
+    "addedAt": "2026-08-02T13:15:42.730Z",
+    "comment": ""
   },
   {
     "isbn": "9771824874351",
@@ -1060,7 +1136,8 @@
     "language": "Italiano",
     "category": "Economia",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:17:53.231Z"
+    "addedAt": "2026-08-02T13:17:53.231Z",
+    "comment": ""
   },
   {
     "isbn": "9788845918711",
@@ -1073,7 +1150,8 @@
     "language": "Italiano",
     "category": "Scienze",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:19:05.620Z"
+    "addedAt": "2026-08-02T13:19:05.620Z",
+    "comment": ""
   },
   {
     "isbn": "9788808008244",
@@ -1086,7 +1164,8 @@
     "language": "Italiano",
     "category": "Scienze",
     "status": "In lettura",
-    "addedAt": "2026-08-02T13:21:21.028Z"
+    "addedAt": "2026-08-02T13:21:21.028Z",
+    "comment": ""
   },
   {
     "isbn": "9788857555195",
@@ -1099,7 +1178,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:22:44.217Z"
+    "addedAt": "2026-08-02T13:22:44.217Z",
+    "comment": ""
   },
   {
     "isbn": "9788844047849",
@@ -1112,7 +1192,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:24:29.614Z"
+    "addedAt": "2026-08-02T13:24:29.614Z",
+    "comment": ""
   },
   {
     "isbn": "9788833924861",
@@ -1125,7 +1206,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:26:07.454Z"
+    "addedAt": "2026-08-02T13:26:07.454Z",
+    "comment": ""
   },
   {
     "isbn": "9788845901843",
@@ -1139,7 +1221,8 @@
     "category": "Filosofia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845901843-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:27:09.438Z"
+    "addedAt": "2026-08-02T13:27:09.438Z",
+    "comment": ""
   },
   {
     "isbn": "9788863572681",
@@ -1152,7 +1235,8 @@
     "language": "Italiano",
     "category": "Saggi",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:28:14.531Z"
+    "addedAt": "2026-08-02T13:28:14.531Z",
+    "comment": ""
   },
   {
     "isbn": "9788845905889",
@@ -1165,7 +1249,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:30:05.513Z"
+    "addedAt": "2026-08-02T13:30:05.513Z",
+    "comment": ""
   },
   {
     "isbn": "9788845901997",
@@ -1179,7 +1264,8 @@
     "category": "Filosofia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845901997-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:30:31.723Z"
+    "addedAt": "2026-08-02T13:30:31.723Z",
+    "comment": ""
   },
   {
     "isbn": "9788845903908",
@@ -1193,7 +1279,8 @@
     "category": "Filosofia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845903908-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:30:53.104Z"
+    "addedAt": "2026-08-02T13:30:53.104Z",
+    "comment": ""
   },
   {
     "isbn": "9788806219505",
@@ -1207,7 +1294,8 @@
     "category": "Scienze",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806219505-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:32:02.349Z"
+    "addedAt": "2026-08-02T13:32:02.349Z",
+    "comment": ""
   },
   {
     "isbn": "9788833921983",
@@ -1220,7 +1308,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:33:31.478Z"
+    "addedAt": "2026-08-02T13:33:31.478Z",
+    "comment": ""
   },
   {
     "isbn": "9788817106399",
@@ -1234,7 +1323,8 @@
     "category": "Filosofia",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788817106399-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:35:05.957Z"
+    "addedAt": "2026-08-02T13:35:05.957Z",
+    "comment": ""
   },
   {
     "isbn": "0700837545049",
@@ -1247,7 +1337,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "Letto",
-    "addedAt": "2026-08-02T13:36:20.808Z"
+    "addedAt": "2026-08-02T13:36:20.808Z",
+    "comment": ""
   },
   {
     "isbn": "9788806203924",
@@ -1260,7 +1351,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "In lettura",
-    "addedAt": "2026-08-02T13:37:29.863Z"
+    "addedAt": "2026-08-02T13:37:29.863Z",
+    "comment": ""
   },
   {
     "isbn": "9788845272387",
@@ -1273,7 +1365,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "Non letto",
-    "addedAt": "2026-08-02T13:38:55.525Z"
+    "addedAt": "2026-08-02T13:38:55.525Z",
+    "comment": ""
   },
   {
     "isbn": "9780486653556",
@@ -1287,7 +1380,8 @@
     "category": "Scienze",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9780486653556-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-08-03T11:14:17.040Z"
+    "addedAt": "2026-08-03T11:14:17.040Z",
+    "comment": ""
   },
   {
     "isbn": "9788806221935",
@@ -1301,7 +1395,8 @@
     "category": "Classici",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806221935-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-08-18T17:16:03.525Z"
+    "addedAt": "2026-08-18T17:16:03.525Z",
+    "comment": ""
   },
   {
     "isbn": "9781735028804",
@@ -1315,7 +1410,8 @@
     "category": "Finanza",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781735028804-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-08-18T17:18:14.584Z"
+    "addedAt": "2026-08-18T17:18:14.584Z",
+    "comment": ""
   },
   {
     "isbn": "9788833923123",
@@ -1329,7 +1425,8 @@
     "category": "Scienze",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788833923123-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:19:55.619Z"
+    "addedAt": "2026-09-14T07:19:55.619Z",
+    "comment": ""
   },
   {
     "isbn": "9788807881640",
@@ -1342,7 +1439,8 @@
     "language": "Italiano",
     "category": "Narrativa",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:21:35.676Z"
+    "addedAt": "2026-09-14T07:21:35.676Z",
+    "comment": ""
   },
   {
     "isbn": "9788806243685",
@@ -1356,7 +1454,8 @@
     "category": "Narrativa",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806243685-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:22:48.749Z"
+    "addedAt": "2026-09-14T07:22:48.749Z",
+    "comment": ""
   },
   {
     "isbn": "9788845934506",
@@ -1369,7 +1468,8 @@
     "language": "Italiano",
     "category": "Narrativa",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:24:36.429Z"
+    "addedAt": "2026-09-14T07:24:36.429Z",
+    "comment": ""
   },
   {
     "isbn": "9788845925344",
@@ -1383,7 +1483,8 @@
     "category": "Scienze",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845925344-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:25:48.843Z"
+    "addedAt": "2026-09-14T07:25:48.843Z",
+    "comment": ""
   },
   {
     "isbn": "9782753527430",
@@ -1397,7 +1498,8 @@
     "category": "Saggi",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782753527430-L.jpg",
     "status": "In lettura",
-    "addedAt": "2026-09-14T07:27:40.303Z"
+    "addedAt": "2026-09-14T07:27:40.303Z",
+    "comment": ""
   },
   {
     "isbn": "9788834011614",
@@ -1410,7 +1512,8 @@
     "language": "Italiano",
     "category": "Filosofia",
     "status": "In lettura",
-    "addedAt": "2026-09-14T07:29:32.002Z"
+    "addedAt": "2026-09-14T07:29:32.002Z",
+    "comment": ""
   },
   {
     "isbn": "9782361955199",
@@ -1424,7 +1527,8 @@
     "category": "Guide",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782361955199-L.jpg",
     "status": "Letto",
-    "addedAt": "2026-09-14T07:30:39.347Z"
+    "addedAt": "2026-09-14T07:30:39.347Z",
+    "comment": ""
   },
   {
     "isbn": "9789899095090",
@@ -1437,7 +1541,8 @@
     "language": "Inglese",
     "category": "Classici",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:33:12.015Z"
+    "addedAt": "2026-09-14T07:33:12.015Z",
+    "comment": ""
   },
   {
     "isbn": "9782072923470",
@@ -1451,7 +1556,8 @@
     "category": "Saggi",
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782072923470-L.jpg",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:34:03.492Z"
+    "addedAt": "2026-09-14T07:34:03.492Z",
+    "comment": ""
   },
   {
     "isbn": "9788807903847",
@@ -1464,7 +1570,8 @@
     "language": "Italiano",
     "category": "Classici",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:35:34.953Z"
+    "addedAt": "2026-09-14T07:35:34.953Z",
+    "comment": ""
   },
   {
     "isbn": "9788833934013",
@@ -1477,7 +1584,8 @@
     "language": "Italiano",
     "category": "Matematica",
     "status": "In lettura",
-    "addedAt": "2026-09-14T07:36:44.052Z"
+    "addedAt": "2026-09-14T07:36:44.052Z",
+    "comment": ""
   },
   {
     "isbn": "9781278013947",
@@ -1489,7 +1597,8 @@
     "language": "Latino",
     "category": "Matematica",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:43:15.235Z"
+    "addedAt": "2026-09-14T07:43:15.235Z",
+    "comment": ""
   },
   {
     "isbn": "9788807881060",
@@ -1502,6 +1611,7 @@
     "language": "Italiano",
     "category": "Narrativa",
     "status": "Non letto",
-    "addedAt": "2026-09-14T07:46:38.429Z"
+    "addedAt": "2026-09-14T07:46:38.429Z",
+    "comment": ""
   }
 ]
