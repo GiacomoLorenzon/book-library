@@ -962,7 +962,8 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9783836504256-L.jpg",
     "status": "Letto",
     "addedAt": "2026-02-16T18:47:44.276Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#ac3900"
   },
   {
     "isbn": "9788857554099",
@@ -991,7 +992,8 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845908927-L.jpg",
     "status": "In lettura",
     "addedAt": "2026-04-10T19:05:45.523Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#ffffcd"
   },
   {
     "isbn": "9788815019806",
@@ -1265,7 +1267,8 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845901997-L.jpg",
     "status": "Non letto",
     "addedAt": "2026-08-02T13:30:31.723Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#ffec92"
   },
   {
     "isbn": "9788845903908",
@@ -1280,7 +1283,8 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845903908-L.jpg",
     "status": "Non letto",
     "addedAt": "2026-08-02T13:30:53.104Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#fffb88"
   },
   {
     "isbn": "9788806219505",
@@ -1528,7 +1532,8 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9782361955199-L.jpg",
     "status": "Letto",
     "addedAt": "2026-09-14T07:30:39.347Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#bdffc0"
   },
   {
     "isbn": "9789899095090",
