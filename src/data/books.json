@@ -251,7 +251,8 @@
     "category": "Narrativa",
     "status": "Non letto",
     "addedAt": "2025-12-14T12:56:04.025Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#e63b7a"
   },
   {
     "isbn": "9788845929649",
@@ -739,7 +740,8 @@
     "category": "Medicina",
     "status": "Letto",
     "addedAt": "2026-01-16T18:01:50.617Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#27ae5a"
   },
   {
     "isbn": "9788817120715",
@@ -1165,7 +1167,8 @@
     "category": "Scienze",
     "status": "In lettura",
     "addedAt": "2026-08-02T13:21:21.028Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#cbf0ff"
   },
   {
     "isbn": "9788857555195",
@@ -1207,7 +1210,8 @@
     "category": "Filosofia",
     "status": "Letto",
     "addedAt": "2026-08-02T13:26:07.454Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#791a3d"
   },
   {
     "isbn": "9788845901843",
@@ -1599,7 +1603,8 @@
     "category": "Matematica",
     "status": "Non letto",
     "addedAt": "2026-09-14T07:43:15.235Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#ffa57d"
   },
   {
     "isbn": "9788807881060",
