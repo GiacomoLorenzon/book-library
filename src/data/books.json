@@ -959,11 +959,10 @@
     "year": 2015,
     "language": "Francese",
     "category": "Arte",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9783836504256-L.jpg",
     "status": "Letto",
     "addedAt": "2026-02-16T18:47:44.276Z",
     "comment": "",
-    "placeholderColor": "#ac3900"
+    "placeholderColor": "#ffefec"
   },
   {
     "isbn": "9788857554099",
@@ -1263,7 +1262,6 @@
     "year": 1978,
     "language": "Italiano",
     "category": "Filosofia",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845901997-L.jpg",
     "status": "Non letto",
     "addedAt": "2026-08-02T13:30:31.723Z",
     "comment": "",
@@ -1279,11 +1277,10 @@
     "year": 1979,
     "language": "Italiano",
     "category": "Filosofia",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845903908-L.jpg",
     "status": "Non letto",
     "addedAt": "2026-08-02T13:30:53.104Z",
     "comment": "",
-    "placeholderColor": "#fffb88"
+    "placeholderColor": "#fffca5"
   },
   {
     "isbn": "9788806219505",
@@ -1324,10 +1321,10 @@
     "year": 2003,
     "language": "Italiano",
     "category": "Filosofia",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788817106399-L.jpg",
     "status": "Non letto",
     "addedAt": "2026-08-02T13:35:05.957Z",
-    "comment": ""
+    "comment": "",
+    "placeholderColor": "#858585"
   },
   {
     "isbn": "0700837545049",
@@ -1528,7 +1525,6 @@
     "year": 2021,
     "language": "Francese",
     "category": "Guide",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9782361955199-L.jpg",
     "status": "Letto",
     "addedAt": "2026-09-14T07:30:39.347Z",
     "comment": "",
