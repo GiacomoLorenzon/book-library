@@ -281,8 +281,7 @@
     "category": "Narrativa",
     "status": "Non letto",
     "addedAt": "2025-12-14T12:58:59.228Z",
-    "comment": "",
-    "placeholderColor": "#cbf0ff"
+    "comment": ""
   },
   {
     "title": "A Moveable Feast",
@@ -308,8 +307,7 @@
     "category": "Narrativa",
     "status": "Non letto",
     "addedAt": "2025-12-15T22:16:53.886Z",
-    "comment": "",
-    "placeholderColor": "#b1dd8b"
+    "comment": ""
   },
   {
     "isbn": "9788845986390",
@@ -1606,125 +1604,5 @@
     "status": "Non letto",
     "addedAt": "2026-09-14T07:46:38.429Z",
     "comment": ""
-  },
-  {
-    "isbn": "9788845926150",
-    "title": "L’occhio della mente",
-    "authors": [
-      "Oliver Sacks"
-    ],
-    "publisher": "Adelphi",
-    "year": 2010,
-    "language": "Italiano",
-    "category": "Medicina",
-    "placeholderColor": "#89bfff",
-    "comment": "",
-    "status": "Non letto",
-    "addedAt": "2026-10-19T16:27:25.098Z"
-  },
-  {
-    "isbn": "9788811014102",
-    "title": "Finché il caffè è caldo",
-    "authors": [
-      "Toshikazu Kawaguchi"
-    ],
-    "publisher": "Garzanti",
-    "year": 2015,
-    "language": "Italiano",
-    "category": "Narrativa",
-    "placeholderColor": "#85f2ff",
-    "comment": "",
-    "status": "Non letto",
-    "addedAt": "2026-10-19T16:30:10.946Z"
-  },
-  {
-    "isbn": "9788845935053",
-    "title": "Helgoland",
-    "authors": [
-      "Carlo Rovelli"
-    ],
-    "publisher": "Adelphi",
-    "year": 2020,
-    "language": "Italiano",
-    "category": "Fisica",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788845935053-L.jpg",
-    "comment": "",
-    "status": "Non letto",
-    "addedAt": "2026-10-19T16:31:09.853Z"
-  },
-  {
-    "isbn": "9788811685272",
-    "title": "Apologia di un matematico",
-    "authors": [
-      "Godfrey H. Hardy"
-    ],
-    "publisher": "Garzanti",
-    "year": 1940,
-    "language": "Italiano",
-    "category": "Scienze",
-    "placeholderColor": "#614fff",
-    "comment": "",
-    "status": "Non letto",
-    "addedAt": "2026-10-19T16:33:09.579Z"
-  },
-  {
-    "isbn": "9788804752028",
-    "title": "Treno di notte per Lisbona",
-    "authors": [
-      "Pascal Mercier"
-    ],
-    "publisher": "Mondadori",
-    "year": 2004,
-    "language": "Italiano",
-    "category": "Narrativa",
-    "placeholderColor": "#474769",
-    "comment": "",
-    "status": "Non letto",
-    "addedAt": "2026-10-19T16:35:23.659Z"
-  },
-  {
-    "isbn": "9788845935329",
-    "title": "Il piacere di scoprire",
-    "authors": [
-      "Richard P. Feynman"
-    ],
-    "publisher": "Adelphi",
-    "year": 1999,
-    "language": "Italiano",
-    "category": "Scienze",
-    "placeholderColor": "#e5504b",
-    "comment": "",
-    "status": "Non letto",
-    "addedAt": "2026-10-19T16:37:23.315Z"
-  },
-  {
-    "isbn": "9781847941497",
-    "title": "Never Split the Difference",
-    "authors": [
-      "Chris Voss"
-    ],
-    "publisher": "Random House Uk",
-    "year": 2017,
-    "language": "Inglese",
-    "category": "Self-help",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781847941497-L.jpg",
-    "comment": "",
-    "status": "Non letto",
-    "addedAt": "2026-10-19T16:39:31.198Z"
-  },
-  {
-    "isbn": "9788806241773",
-    "title": "Le parole sono importanti",
-    "authors": [
-      "Marco Balzano"
-    ],
-    "publisher": "Einaudi",
-    "year": 2019,
-    "language": "Italiano",
-    "category": "Filosofia",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9788806241773-L.jpg",
-    "comment": "",
-    "status": "Non letto",
-    "addedAt": "2026-10-19T16:42:23.675Z"
   }
 ]
